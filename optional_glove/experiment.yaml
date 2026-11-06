@@ -1,0 +1,54 @@
+experiment: optional_GloVe_100d_GRU
+version: optional-glove-v1.0
+dataset: dedup_v1.1
+phase: optional_extension_after_locked_Gate_E
+baseline_run: DL-03-s42
+new_runs: [TL-01-s42, TL-02-s42]
+scope: Train_and_Validation_only
+test_policy: Test_already_seen_in_prior_work_do_not_reevaluate_or_tune
+source:
+  dataset: GloVe Wikipedia 2014 + Gigaword 5 (6B tokens, 400000 uncased words)
+  representation: glove.6B.100d (Zenodo mirror in word2vec binary format)
+  format: word2vec_binary_float32
+  dimension: 100
+  original_project: https://nlp.stanford.edu/projects/glove/
+  download_mirror: https://zenodo.org/records/4925376/files/glove.6B.100d.zip?download=1
+  archive_name: glove.6B.100d.zip
+  binary_name: glove.6B.100d
+  expected_binary_bytes: 163356485
+  expected_archive_md5: f19871e3053750198004fb2acc1f8d44
+  license: Open Data Commons Public Domain Dedication and License 1.0
+common_training:
+  seed: 42
+  max_tokens: 12000
+  output_sequence_length: 160
+  embedding_dim: 100
+  hidden_units: 64
+  batch_size: 128
+  max_epochs: 10
+  optimizer: Adam
+  learning_rate: 0.001
+  loss: binary_crossentropy
+  sigmoid_threshold: 0.5
+  dropout: 0.0
+  early_stopping: false
+  mask_zero: true
+  train_shuffle: true
+embedding_preparation:
+  vocab_source: artifacts/vectorizers/keras_vocabulary_12000.txt
+  token_id_source: artifacts/vectorizers/keras_token_ids_12000_160.npz
+  pad_index: 0
+  unk_index: 1
+  pad_vector: exact_zero
+  unk_vector: deterministic_gaussian_random
+  missing_glove_token: deterministic_gaussian_random
+  unmatched_stddev: 0.05
+  unmatched_seed: 42
+conditions:
+  TL-01-s42: {glove_initialization: true, embedding_trainable: false}
+  TL-02-s42: {glove_initialization: true, embedding_trainable: true}
+comparison:
+  baseline_reused_without_retraining: DL-03-s42
+  primary_metric: Validation_F1
+  further_selection_against_previous_14: prohibited
+  official_Test_evaluation: prohibited

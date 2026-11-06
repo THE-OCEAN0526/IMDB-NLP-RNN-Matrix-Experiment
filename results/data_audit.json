@@ -1,0 +1,28 @@
+{
+  "version": "dedup_v1.1",
+  "source_train_rows": 25000,
+  "official_test_rows": 25000,
+  "excluded_test_overlap": {
+    "rows": 123,
+    "labels": {
+      "0": 95,
+      "1": 28
+    }
+  },
+  "excluded_intra_train_duplicates": {
+    "rows": 98,
+    "labels": {
+      "0": 69,
+      "1": 29
+    }
+  },
+  "train_val_test_cross_split_cleaned_text_overlaps": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "test_internal_duplicate_groups": 193,
+  "test_internal_extra_duplicate_rows": 201,
+  "global_conflicting_label_hash_groups": 0,
+  "warning": "No cross-split identical full cleaned text; semantic near-duplicates not tested and official Test internal duplicates retained."
+}

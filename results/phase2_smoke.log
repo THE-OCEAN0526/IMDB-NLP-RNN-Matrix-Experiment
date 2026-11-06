@@ -1,0 +1,200 @@
+GPU_PREFLIGHT_PASS [('/physical_device:GPU:0', 'GPU')]
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793793322.082558   11702 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+Model: "IMDB_DL04"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout (Dropout)   │ (None, 64)        │          0 │ lstm[0][0]        │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ dropout[0][0]     │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-04-s42 smoke True epoch_budget 1 dropout True early_stopping False params 1242305
+4/4 - 1s - 340ms/step - accuracy: 0.4883 - loss: 0.6934 - val_accuracy: 0.5156 - val_loss: 0.6935
+PHASE2_RESULT DL-04-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.693546 f1 0.651685 acc 0.515625
+Model: "IMDB_DL05"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ lstm[0][0]        │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-05-s42 smoke True epoch_budget 1 dropout False early_stopping True params 1242305
+WARNING:tensorflow:5 out of the last 11 calls to <function TensorFlowTrainer._make_function.<locals>.multi_step_on_iterator at 0x7b26741dc720> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+4/4 - 1s - 129ms/step - accuracy: 0.5195 - loss: 0.6930 - val_accuracy: 0.5078 - val_loss: 0.6918
+WARNING:tensorflow:6 out of the last 12 calls to <function TensorFlowTrainer._make_function.<locals>.multi_step_on_iterator at 0x7b26741dc720> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+PHASE2_RESULT DL-05-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.691848 f1 0.651934 acc 0.507812
+Model: "IMDB_DL06"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout (Dropout)   │ (None, 64)        │          0 │ lstm[0][0]        │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ dropout[0][0]     │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-06-s42 smoke True epoch_budget 1 dropout True early_stopping True params 1242305
+4/4 - 1s - 131ms/step - accuracy: 0.4883 - loss: 0.6934 - val_accuracy: 0.5156 - val_loss: 0.6935
+PHASE2_RESULT DL-06-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.693546 f1 0.651685 acc 0.515625
+Model: "IMDB_DL07"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_1 (LSTM)       │ (None, 160, 64)   │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_2 (LSTM)       │ (None, 64)        │     33,024 │ lstm_1[0][0],     │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ lstm_2[0][0]      │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,275,329 (4.86 MB)
+ Trainable params: 1,275,329 (4.86 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-07-s42 smoke True epoch_budget 1 dropout False early_stopping False params 1275329
+4/4 - 1s - 182ms/step - accuracy: 0.4844 - loss: 0.6935 - val_accuracy: 0.5156 - val_loss: 0.6931
+PHASE2_RESULT DL-07-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.693063 f1 0.673684 acc 0.515625
+Model: "IMDB_DL08"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_1 (LSTM)       │ (None, 160, 64)   │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru_2 (GRU)         │ (None, 64)        │     24,960 │ lstm_1[0][0],     │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru_2[0][0]       │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,267,265 (4.83 MB)
+ Trainable params: 1,267,265 (4.83 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-08-s42 smoke True epoch_budget 1 dropout False early_stopping False params 1267265
+4/4 - 1s - 177ms/step - accuracy: 0.4844 - loss: 0.6931 - val_accuracy: 0.5078 - val_loss: 0.6925
+WARNING:tensorflow:5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7b26635d85e0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+PHASE2_RESULT DL-08-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.692484 f1 0.670157 acc 0.507812
+Model: "IMDB_DL09"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_lstm  │ (None, 128)       │     84,480 │ embedding[0][0],  │
+│ (Bidirectional)     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │        129 │ bidirectional_ls… │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,284,609 (4.90 MB)
+ Trainable params: 1,284,609 (4.90 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-09-s42 smoke True epoch_budget 1 dropout False early_stopping False params 1284609
+4/4 - 1s - 190ms/step - accuracy: 0.5000 - loss: 0.6931 - val_accuracy: 0.5000 - val_loss: 0.6920
+WARNING:tensorflow:6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7b2674570540> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+PHASE2_RESULT DL-09-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.692048 f1 0.655914 acc 0.5
+Model: "IMDB_DL10"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_gru   │ (None, 128)       │     63,744 │ embedding[0][0],  │
+│ (Bidirectional)     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │        129 │ bidirectional_gr… │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,263,873 (4.82 MB)
+ Trainable params: 1,263,873 (4.82 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-10-s42 smoke True epoch_budget 1 dropout False early_stopping False params 1263873
+4/4 - 1s - 176ms/step - accuracy: 0.4961 - loss: 0.6932 - val_accuracy: 0.5391 - val_loss: 0.6919
+PHASE2_RESULT DL-10-s42 epochs 1 best_val_loss_epoch 1 final_post_restore_val_loss 0.691947 f1 0.646707 acc 0.539062
+PHASE2_RUNNER_DONE ['DL-04', 'DL-05', 'DL-06', 'DL-07', 'DL-08', 'DL-09', 'DL-10']

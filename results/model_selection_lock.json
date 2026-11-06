@@ -1,0 +1,180 @@
+{
+  "version": "phase4-model-selection-lock-v1",
+  "status": "LOCKED_BEFORE_FINAL_TEST",
+  "created_utc": "2026-11-04T12:11:56.163196+00:00",
+  "stage": "pre_test",
+  "dataset_variant": "dedup_v1.1",
+  "seed": 42,
+  "source_gate_c": "PASS",
+  "official_test_not_evaluated": true,
+  "test_rows_intended": 25000,
+  "policy_sha256": "9aec90b8fbf884d685861d636877dbfe832e57b464b74274c0c370b439f35c62",
+  "runs_registry_sha256": "1d249e8a3f2054f5be3357b6e3ae962ebdec7335486e77e94a9138dbfc01934e",
+  "data_split_manifest_sha256": "c34c2adb3e24c4e4a0da3e6be27914545427689559f80e07f999a4896d61079e",
+  "split_assignments_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "phase4_ranked_csv_sha256": "32c03e53645b4710051cf1ce6be20433bd3629d069174e4c59adaf8c1b5330f3",
+  "phase4_rq_analysis_sha256": "c360e4e6cebe7ec14563e5fb0752f40f13c0a50b7f1db927abd5c035cb2733ce",
+  "phase4_summary_sha256": "704249da42d6e75d22de30450aeba19c838c413ae05bef7676d62f7a793e8a3e",
+  "gate_c_acceptance_sha256": "cb7ecb7cd6a16ddd14aa222cbb0ce727ff8660fb980e40e6742d8924ce754823",
+  "selection_algorithm": "Maximize Validation F1; tie-break higher Validation Accuracy; final tie-break run_id ascending",
+  "all14_ranking": [
+    "ML-04-s42",
+    "ML-02-s42",
+    "DL-05-s42",
+    "DL-06-s42",
+    "DL-02-s42",
+    "DL-10-s42",
+    "DL-08-s42",
+    "DL-03-s42",
+    "DL-04-s42",
+    "DL-09-s42",
+    "ML-03-s42",
+    "DL-07-s42",
+    "DL-01-s42",
+    "ML-01-s42"
+  ],
+  "selected_overall": "ML-04-s42",
+  "selected_traditional_ml": "ML-04-s42",
+  "selected_deep_learning": "DL-05-s42",
+  "future_final_test_scope": [
+    "ML-04-s42",
+    "DL-05-s42"
+  ],
+  "threshold_policy": "preserve existing model decision rules, no Test-based retuning",
+  "final_test_operation_policy": "one planned evaluation each; publish selected models regardless of Test result; no re-selection",
+  "test_metrics": null,
+  "source_artifacts": {
+    "ML-04-s42": {
+      "model_path": "artifacts/models/ML-04-s42.joblib",
+      "model_sha256": "bab9ec9083d5160fa2c58bc8b96e134764bcc6682854d3ecb53a956fa9ff353d",
+      "validation_predictions_path": "results/predictions/ML-04-s42_validation.csv",
+      "validation_predictions_sha256": "015605bf4b78354336bd810278bb8ccb21699653be3cec02844953fcc3187cba",
+      "validation_f1": 0.893234883256835,
+      "validation_accuracy": 0.8920500403551251,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "ML-02-s42": {
+      "model_path": "artifacts/models/ML-02-s42.joblib",
+      "model_sha256": "485828a00cf27a67913fc8276979d13f86688f8bff805f9a8e32eea0e8ee203c",
+      "validation_predictions_path": "results/predictions/ML-02-s42_validation.csv",
+      "validation_predictions_sha256": "9459238d80a11b4f0953fc7c8b96c1a6c9145fa048e8fedb8053a8d76d72a3f0",
+      "validation_f1": 0.8772845953002611,
+      "validation_accuracy": 0.8767150928167877,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-05-s42": {
+      "model_path": "artifacts/models/DL-05-s42.keras",
+      "model_sha256": "a7b02a17c31b690e13d2bc59c62824bf61fc6a8b5df7db0587904a3d87aaf1e3",
+      "validation_predictions_path": "results/predictions/DL-05-s42_validation.csv",
+      "validation_predictions_sha256": "c67c9a3cd77e69e6054e710285986649776d183a880ff54aa3eaea75b52cab9d",
+      "validation_f1": 0.8451899757477769,
+      "validation_accuracy": 0.8454398708635997,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-06-s42": {
+      "model_path": "artifacts/models/DL-06-s42.keras",
+      "model_sha256": "8726213e96f77e1a2ee2311c305ed2b9a66d9c6027037191d6f8c205499e8e96",
+      "validation_predictions_path": "results/predictions/DL-06-s42_validation.csv",
+      "validation_predictions_sha256": "64eb60a09f5c2a17dc3b3a9cde25551f68f5fa02bb0f713e14238cb70365d113",
+      "validation_f1": 0.8379351740696278,
+      "validation_accuracy": 0.8365617433414043,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-02-s42": {
+      "model_path": "artifacts/models/DL-02-s42.keras",
+      "model_sha256": "086e3bc3d21d6b7ed3c5add1877c7073fee9b36846ef664feffc586e9b4bfef7",
+      "validation_predictions_path": "results/predictions/DL-02-s42_validation.csv",
+      "validation_predictions_sha256": "36ebf56aa696bf76108d465d2d10c4b1732e3771fbc686f5e87c718ba7d0dd22",
+      "validation_f1": 0.8184666805932734,
+      "validation_accuracy": 0.8246569814366425,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-10-s42": {
+      "model_path": "artifacts/models/DL-10-s42.keras",
+      "model_sha256": "841b8ed3bf870b21c2c703c590162baea3ac9c484ce21d8b986988c69fe797cf",
+      "validation_predictions_path": "results/predictions/DL-10-s42_validation.csv",
+      "validation_predictions_sha256": "77a9ba6390585f46825aa9c5d18edb9d14e69856eb7b5667cd3c757912840788",
+      "validation_f1": 0.8177319587628866,
+      "validation_accuracy": 0.8216303470540759,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-08-s42": {
+      "model_path": "artifacts/models/DL-08-s42.keras",
+      "model_sha256": "3d64148df38f33b2b03252eefddd9224614937d6ce0e82a3ae18b6a4746d1ec8",
+      "validation_predictions_path": "results/predictions/DL-08-s42_validation.csv",
+      "validation_predictions_sha256": "5027b8289980206c7a6f207db733d9bfe41a41f9998c171d215b50a0f4a5e9af",
+      "validation_f1": 0.8117138364779874,
+      "validation_accuracy": 0.8066989507667474,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-03-s42": {
+      "model_path": "artifacts/models/DL-03-s42.keras",
+      "model_sha256": "a7f9acf88a19ca60f555855763c5760754cf51d3da327e225f3907d990a4e540",
+      "validation_predictions_path": "results/predictions/DL-03-s42_validation.csv",
+      "validation_predictions_sha256": "d6ab19dbddcb5d1ac8fc79eb8beb02965cc6ba7e9c5088b8565458ceffe54280",
+      "validation_f1": 0.8102336825141015,
+      "validation_accuracy": 0.8099273607748184,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-04-s42": {
+      "model_path": "artifacts/models/DL-04-s42.keras",
+      "model_sha256": "1b1c56b567b194f998a50fb528a38274e9351662bf46d23ae023c79c7bca1fba",
+      "validation_predictions_path": "results/predictions/DL-04-s42_validation.csv",
+      "validation_predictions_sha256": "d25fe4f9fe60724c30d7e5603f2b000e2505e8c2ff4376720c776f6c334eaa3c",
+      "validation_f1": 0.7992845786963434,
+      "validation_accuracy": 0.7962066182405165,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-09-s42": {
+      "model_path": "artifacts/models/DL-09-s42.keras",
+      "model_sha256": "2a2fbf6f5f8ea3eced96a9a56bae147c322180ad6ffb151ce5c940783a0e4f37",
+      "validation_predictions_path": "results/predictions/DL-09-s42_validation.csv",
+      "validation_predictions_sha256": "bb28afa63ac231dd5e091ca708a40086fd56eba4ec845577991a6fe211d84ce2",
+      "validation_f1": 0.7957877348750775,
+      "validation_accuracy": 0.8004439063761097,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "ML-03-s42": {
+      "model_path": "artifacts/models/ML-03-s42.joblib",
+      "model_sha256": "594a34865ce8784200a73cbfa246a14aa2a2dce5a649e5c24af09d943de03e6b",
+      "validation_predictions_path": "results/predictions/ML-03-s42_validation.csv",
+      "validation_predictions_sha256": "f4d8e506f65a2be7946f4f6b8ec1414e6e8092291cb4a7dfbdf1bcb64db286ec",
+      "validation_f1": 0.7778423397249661,
+      "validation_accuracy": 0.7685633575464084,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-07-s42": {
+      "model_path": "artifacts/models/DL-07-s42.keras",
+      "model_sha256": "df05ec744c79d9ac15df78caadf3574a1b327728538f1d972d2a9ff26419b402",
+      "validation_predictions_path": "results/predictions/DL-07-s42_validation.csv",
+      "validation_predictions_sha256": "fab4a15bb793eb921e49fffef6f7860fa90a7178c6d1eb7290b949871f8214c2",
+      "validation_f1": 0.7556148543473427,
+      "validation_accuracy": 0.7782485875706214,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "DL-01-s42": {
+      "model_path": "artifacts/models/DL-01-s42.keras",
+      "model_sha256": "9bf52c9031753aaa46140d828167f61181552ca1836318ad7d332003f6155c1f",
+      "validation_predictions_path": "results/predictions/DL-01-s42_validation.csv",
+      "validation_predictions_sha256": "0363930cc4cbf832bd003d1539fd8ff892d8e77967b72e1e29045f79298dce14",
+      "validation_f1": 0.7125442390876917,
+      "validation_accuracy": 0.7050040355125101,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    },
+    "ML-01-s42": {
+      "model_path": "artifacts/models/ML-01-s42.joblib",
+      "model_sha256": "503c92545ae9927dbe3ffe80724cd111a1773ac5b05249c3fb262c7bcb671fd6",
+      "validation_predictions_path": "results/predictions/ML-01-s42_validation.csv",
+      "validation_predictions_sha256": "eb82e6bfcf00b12ea2fcedb1efed2532f19ecfe89b313f0c4125a2d018162039",
+      "validation_f1": 0.6553540081919251,
+      "validation_accuracy": 0.6434624697336562,
+      "selection_frozen_at_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29"
+    }
+  },
+  "caveats": [
+    "Only exact cleaned-text cross-split duplicates removed, not semantic near-duplicates.",
+    "Official Test preserves internal duplicated comments.",
+    "Only one seed 42 for all 14 conditions, no significance claim.",
+    "Selection lock freezes model artifacts and source metadata logically via SHA; does not enforce filesystem immutable flags."
+  ]
+}

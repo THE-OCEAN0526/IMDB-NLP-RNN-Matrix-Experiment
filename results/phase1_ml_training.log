@@ -1,0 +1,25 @@
+START ML-01 mode FULL
+SELECTED ML-01 parameter 5 validation F1 0.655354 sample_size 19823 4956 smoke False
+PERSISTED ML-01-s42 val_acc 0.643462 val_f1 0.655354 train_s 0.01 pred_s 2.08
+START ML-02 mode FULL
+/usr/local/lib/python3.11/site-packages/sklearn/svm/_base.py:236: FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`
+  warnings.warn(
+CANDIDATE ML-02 C 0.1 f1 0.87728 train_s 96.35
+/usr/local/lib/python3.11/site-packages/sklearn/svm/_base.py:236: FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`
+  warnings.warn(
+CANDIDATE ML-02 C 1.0 f1 0.85541 train_s 98.17
+SELECTED ML-02 parameter 0.1 validation F1 0.877285 sample_size 19823 4956 smoke False
+PERSISTED ML-02-s42 val_acc 0.876715 val_f1 0.877285 train_s 194.53 pred_s 34.29
+START ML-03 mode FULL
+SELECTED ML-03 parameter 5 validation F1 0.777842 sample_size 19823 4956 smoke False
+PERSISTED ML-03-s42 val_acc 0.768563 val_f1 0.777842 train_s 0.0 pred_s 1.83
+START ML-04 mode FULL
+/usr/local/lib/python3.11/site-packages/sklearn/svm/_base.py:236: FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`
+  warnings.warn(
+CANDIDATE ML-04 C 0.1 f1 0.88151 train_s 168.91
+/usr/local/lib/python3.11/site-packages/sklearn/svm/_base.py:236: FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`
+  warnings.warn(
+CANDIDATE ML-04 C 1.0 f1 0.89323 train_s 105.37
+SELECTED ML-04 parameter 1.0 validation F1 0.893235 sample_size 19823 4956 smoke False
+PERSISTED ML-04-s42 val_acc 0.89205 val_f1 0.893235 train_s 274.28 pred_s 48.07
+ML_MATRIX_FINISHED ['ML-01', 'ML-02', 'ML-03', 'ML-04']

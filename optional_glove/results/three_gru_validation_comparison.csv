@@ -1,0 +1,4 @@
+run_id,embedding_initialization,embedding_trainable,model,dataset,val_accuracy,val_precision,val_recall,val_f1,val_loss,trainable_params,epochs_completed,train_time_sec,source
+DL-03-s42,Random Trainable,True,GRU(64),dedup_v1.1,0.809927360775,0.812525252525,0.807955002009,0.810233682514,0.774520635605,1231937,10,12.246,Existing independent Phase1/GateB baseline; no re-training
+TL-01-s42,GloVe_100d_Frozen,False,GRU(64),dedup_v1.1,0.812752219532,0.86319218241,0.745279228606,0.799913755929,0.408387511969,31937,10,23.00341,New post Gate E exploratory GloVe Validation-only run
+TL-02-s42,GloVe_100d_FineTuning,True,GRU(64),dedup_v1.1,0.819814366425,0.888510223953,0.733226195259,0.803433854281,0.901300191879,1231937,10,23.17483,New post Gate E exploratory GloVe Validation-only run

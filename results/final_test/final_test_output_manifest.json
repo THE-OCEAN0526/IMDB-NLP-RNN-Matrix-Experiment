@@ -1,0 +1,15 @@
+{
+  "stage": "official_test",
+  "model_selection_lock_sha256": "6313bacff701e5aedae6239cf25d5b57cacaeeda761a3ff1102a3f3e59bf59c1",
+  "metrics_file": "locked_final_test_metrics.json",
+  "metrics_sha256": "7999c513dee644593cb17e6228b7e3417b1c074e4fe2ad27d9efa8f260fd9719",
+  "output_files_sha256": {
+    "DL-05-s42_test_confusion_matrix.png": "297b1671689ee3ab8e34f46914ccee97a57cc66718a93de3e4280c832efbf055",
+    "DL-05-s42_test_predictions.csv": "0bdc4c4f8ec6fd613079ab773cd264188d301364717a2f03cc83106470d8a27d",
+    "EVALUATION_IN_PROGRESS.json": "96b0700b11bae489fb94ade4a980497b771574f6dbac2e112b1424106244e7e3",
+    "ML-04-s42_test_confusion_matrix.png": "5e1630cbbd411cb13f7dfc23d4484fa76ebd83ecdd4eb395419fd41472b4106d",
+    "ML-04-s42_test_predictions.csv": "8f21b91d85791dc6575750993fb95596936ee903d7eea5dac879ba97e552eafe",
+    "finalists_validation_vs_test.png": "35ec1a38b6156a737eff00ddd7f8a690673c382527d43381f4aeee1567913c9a",
+    "locked_final_test_metrics.json": "7999c513dee644593cb17e6228b7e3417b1c074e4fe2ad27d9efa8f260fd9719"
+  }
+}

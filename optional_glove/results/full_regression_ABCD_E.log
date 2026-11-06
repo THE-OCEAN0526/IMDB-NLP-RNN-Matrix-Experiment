@@ -1,0 +1,63 @@
+test_a_source_sha_and_version (test_gate_a.GateA.test_a_source_sha_and_version) ... ok
+test_b_counts_and_balance (test_gate_a.GateA.test_b_counts_and_balance) ... ok
+test_c_official_test_original_and_order (test_gate_a.GateA.test_c_official_test_original_and_order) ... ok
+test_d_reproducible_ids_seed42 (test_gate_a.GateA.test_d_reproducible_ids_seed42) ... ok
+test_e_exclusions_and_complete_accounting (test_gate_a.GateA.test_e_exclusions_and_complete_accounting) ... ok
+test_f_no_cross_split_identical_full_cleaned_text (test_gate_a.GateA.test_f_no_cross_split_identical_full_cleaned_text) ... ok
+test_g_no_global_label_conflict (test_gate_a.GateA.test_g_no_global_label_conflict) ... ok
+test_h_data_provenance_hashes (test_gate_a.GateA.test_h_data_provenance_hashes) ... ok
+test_i_bow_tfidf_train_only_and_sparse_files (test_gate_a.GateA.test_i_bow_tfidf_train_only_and_sparse_files) ... ok
+test_j_keras_tokens_vocab_and_split_alignment (test_gate_a.GateA.test_j_keras_tokens_vocab_and_split_alignment) ... ok
+test_k_legacy_v1_0_frozen (test_gate_a.GateA.test_k_legacy_v1_0_frozen) ... ok
+test_a_seven_conditions_and_unqiue_runs (test_gate_b.GateB.test_a_seven_conditions_and_unqiue_runs) ... ok
+test_b_gate_a_provenance_and_frozen_settings (test_gate_b.GateB.test_b_gate_a_provenance_and_frozen_settings) ... ok
+test_c_official_test_remains_sealed (test_gate_b.GateB.test_c_official_test_remains_sealed) ... ok
+test_d_all_validation_predictions_and_labels (test_gate_b.GateB.test_d_all_validation_predictions_and_labels) ... ok
+test_e_metrics_and_confusion_recomputed_from_saved_predictions (test_gate_b.GateB.test_e_metrics_and_confusion_recomputed_from_saved_predictions) ... ok
+test_f_model_artifacts_exist_and_nonempty (test_gate_b.GateB.test_f_model_artifacts_exist_and_nonempty) ... ok
+test_g_knn_svc_candidates_and_exact_classifiers (test_gate_b.GateB.test_g_knn_svc_candidates_and_exact_classifiers) ... ok
+test_h_rnn_architecture_epochs_and_training_history (test_gate_b.GateB.test_h_rnn_architecture_epochs_and_training_history) ... 2026-11-05 05:56:57.384484: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+ok
+test_i_all_figures_exist (test_gate_b.GateB.test_i_all_figures_exist) ... ok
+test_j_splits_still_match_gate_a_and_sample_count (test_gate_b.GateB.test_j_splits_still_match_gate_a_and_sample_count) ... ok
+test_a_14_unique_baselines_and_new_conditions (test_gate_c.GateC.test_a_14_unique_baselines_and_new_conditions) ... ok
+test_b_frozen_config_dataset_versions (test_gate_c.GateC.test_b_frozen_config_dataset_versions) ... ok
+test_c_gate_b_model_hashes_unchanged (test_gate_c.GateC.test_c_gate_b_model_hashes_unchanged) ... ok
+test_d_gate_b_registry_rows_unchanged (test_gate_c.GateC.test_d_gate_b_registry_rows_unchanged) ... ok
+test_e_validation_predictions_and_metrics (test_gate_c.GateC.test_e_validation_predictions_and_metrics) ... ok
+test_f_all_test_columns_blank (test_gate_c.GateC.test_f_all_test_columns_blank) ... ok
+test_g_new_phase2_metadata_and_artifacts (test_gate_c.GateC.test_g_new_phase2_metadata_and_artifacts) ... ok
+test_h_regularization_2x2_reuse_baseline (test_gate_c.GateC.test_h_regularization_2x2_reuse_baseline) ... ok
+test_i_advanced_architectures_and_no_regularization (test_gate_c.GateC.test_i_advanced_architectures_and_no_regularization) ... ok
+test_j_all_new_rnns_share_core_control_parameters (test_gate_c.GateC.test_j_all_new_rnns_share_core_control_parameters) ... ok
+test_k_phase2_and_baseline_models_reload (test_gate_c.GateC.test_k_phase2_and_baseline_models_reload) ... ok
+test_l_no_changes_to_gate_a_original_data (test_gate_c.GateC.test_l_no_changes_to_gate_a_original_data) ... ok
+test_a_optional_after_original_gate_e_preserved (test_gate_d_optional_glove.OptionalGateD.test_a_optional_after_original_gate_e_preserved) ... ok
+test_b_config_and_two_new_ids_and_original_baseline (test_gate_d_optional_glove.OptionalGateD.test_b_config_and_two_new_ids_and_original_baseline) ... ok
+test_c_source_binary_hash_400k_100d (test_gate_d_optional_glove.OptionalGateD.test_c_source_binary_hash_400k_100d) ... ok
+test_d_vocab_pad_oov_and_matched_coverage (test_gate_d_optional_glove.OptionalGateD.test_d_vocab_pad_oov_and_matched_coverage) ... ok
+test_e_train_only_frozen_token_vocab_and_sizes (test_gate_d_optional_glove.OptionalGateD.test_e_train_only_frozen_token_vocab_and_sizes) ... ok
+test_f_both_full_runs_and_files (test_gate_d_optional_glove.OptionalGateD.test_f_both_full_runs_and_files) ... ok
+test_g_validation_preds_align_and_metrics_recomputed (test_gate_d_optional_glove.OptionalGateD.test_g_validation_preds_align_and_metrics_recomputed) ... ok
+test_h_models_have_same_gru_and_respective_frozen_trainable (test_gate_d_optional_glove.OptionalGateD.test_h_models_have_same_gru_and_respective_frozen_trainable) ... ok
+test_i_loss_history_and_figures (test_gate_d_optional_glove.OptionalGateD.test_i_loss_history_and_figures) ... ok
+test_j_comparison_3_conditions_and_independent_results (test_gate_d_optional_glove.OptionalGateD.test_j_comparison_3_conditions_and_independent_results) ... ok
+test_k_notebook06_all_cells_executed_without_errors (test_gate_d_optional_glove.OptionalGateD.test_k_notebook06_all_cells_executed_without_errors) ... ok
+test_l_no_optional_test_predictions_or_official_test_changes (test_gate_d_optional_glove.OptionalGateD.test_l_no_optional_test_predictions_or_official_test_changes) ... ok
+test_a_one_time_lock_and_fixed_scope (test_gate_e.GateE.test_a_one_time_lock_and_fixed_scope) ... ok
+test_b_preserve_original_official_test_25k (test_gate_e.GateE.test_b_preserve_original_official_test_25k) ... ok
+test_c_model_hashes_and_original_registry_unchanged (test_gate_e.GateE.test_c_model_hashes_and_original_registry_unchanged) ... ok
+test_d_validation_registries_still_have_no_test_metrics (test_gate_e.GateE.test_d_validation_registries_still_have_no_test_metrics) ... ok
+test_e_both_25k_prediction_files_align_one_to_one (test_gate_e.GateE.test_e_both_25k_prediction_files_align_one_to_one) ... ok
+test_f_recalculate_test_metrics_and_confusion (test_gate_e.GateE.test_f_recalculate_test_metrics_and_confusion) ... ok
+test_g_svc_fixed_decision_rule (test_gate_e.GateE.test_g_svc_fixed_decision_rule) ... ok
+test_h_lstm_fixed_threshold_and_bce (test_gate_e.GateE.test_h_lstm_fixed_threshold_and_bce) ... ok
+test_i_locked_output_manifest_hashes (test_gate_e.GateE.test_i_locked_output_manifest_hashes) ... ok
+test_j_both_test_confusion_png_and_comparison (test_gate_e.GateE.test_j_both_test_confusion_png_and_comparison) ... ok
+test_k_pretest_snapshot_preserved_and_final_notebook_executed (test_gate_e.GateE.test_k_pretest_snapshot_preserved_and_final_notebook_executed) ... ok
+test_l_final_summary_and_gate_e_docs_present (test_gate_e.GateE.test_l_final_summary_and_gate_e_docs_present) ... ok
+
+----------------------------------------------------------------------
+Ran 57 tests in 14.875s
+
+OK

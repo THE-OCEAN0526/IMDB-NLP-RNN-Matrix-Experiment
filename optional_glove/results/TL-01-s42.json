@@ -1,0 +1,56 @@
+{
+  "run_id": "TL-01-s42",
+  "condition": "GloVe_100d_Frozen",
+  "dataset": "dedup_v1.1",
+  "seed": 42,
+  "scope": "Validation-only exploratory extension after official Gate E",
+  "original_baseline": "DL-03-s42",
+  "embedding_initialization": "GloVe_6B_100d_Train_only_vocab",
+  "embedding_trainable": false,
+  "trainable_params": 31937,
+  "frozen_params": 1200000,
+  "vocabulary_size": 12000,
+  "input_length": 160,
+  "embedding_dim": 100,
+  "hidden_units": 64,
+  "epochs_completed": 10,
+  "batch_size": 128,
+  "optimizer": "Adam_0.001",
+  "loss": "binary_crossentropy",
+  "dropout": 0,
+  "early_stopping": false,
+  "train_time_sec": 23.00341,
+  "inference_time_sec": 0.21968,
+  "validation_size": 4956,
+  "test_evaluations": 0,
+  "glove_source_sha256": "4e29827d144c2097654433b1c4be41ce320949f0792ab820991a68fa3e34d494",
+  "glove_initial_weights_sha256": "0ddb2fdf9c12ca310494649da8225bbfe74b650104fa31bd90859e44a8862aee",
+  "glove_vocabulary_coverage": 0.7198699783297217,
+  "embedding_change_l2": 0.0,
+  "model_path": "optional_glove/artifacts/TL-01-s42.keras",
+  "model_sha256": "0f4e91f376c4bbacc452057d779ce6b47974dc33a4074650a1f8fa1de0b8cd44",
+  "predictions_path": "optional_glove/results/TL-01-s42_validation_predictions.csv",
+  "predictions_sha256": "55b19beb2176b630239d85a3a880b1541581668afc443d42683b762c6068730b",
+  "history_path": "optional_glove/results/TL-01-s42_history.csv",
+  "history_sha256": "98e73e57e5262c2e008f041cf48bd5d963f2f748803214d9afd9363716c4b535",
+  "config_sha256": "523812f69b5b51e88e8e2b693c1eae989fa050a129d819c1ecd5ded8ab9bff74",
+  "created_at_utc": "2026-11-05T05:53:00.929692+00:00",
+  "hardware": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ],
+  "val_accuracy": 0.8127522195318806,
+  "val_precision": 0.8631921824104235,
+  "val_recall": 0.7452792286058658,
+  "val_f1": 0.7999137559292798,
+  "val_confusion_matrix": [
+    [
+      2173,
+      294
+    ],
+    [
+      634,
+      1855
+    ]
+  ],
+  "val_loss": 0.40838751196861267
+}

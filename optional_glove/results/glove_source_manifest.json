@@ -1,0 +1,22 @@
+{
+  "canonical_glove_project": "https://nlp.stanford.edu/projects/glove/",
+  "download_mirror": "https://zenodo.org/records/4925376/files/glove.6B.100d.zip?download=1",
+  "source_format": "word2vec_binary_float32",
+  "source_word_count": 400000,
+  "license": "Open Data Commons Public Domain Dedication and License 1.0",
+  "zip_path": "optional_glove/source/glove.6B.100d.zip",
+  "zip_size_bytes": 115061671,
+  "zip_md5": "f19871e3053750198004fb2acc1f8d44",
+  "zip_sha256": "ce26e23270a807c62ceb8dc6453980e312b1cf4e2101cdcb45c73f19e46b0eba",
+  "glove_binary_path": "optional_glove/source/glove.6B.100d",
+  "glove_binary_size_bytes": 163356485,
+  "glove_binary_sha256": "4e29827d144c2097654433b1c4be41ce320949f0792ab820991a68fa3e34d494",
+  "aligned_matrix_path": "optional_glove/artifacts/glove_6B_100d_aligned_matrix.npy",
+  "aligned_matrix_sha256": "0ddb2fdf9c12ca310494649da8225bbfe74b650104fa31bd90859e44a8862aee",
+  "aligned_mask_path": "optional_glove/artifacts/glove_6B_100d_matched_mask.npy",
+  "aligned_mask_sha256": "42d70ea4c375a4e8cf0e4794190a0b0242232dbca54301b4877ed577c40d7e4b",
+  "experiment_config_sha256": "523812f69b5b51e88e8e2b693c1eae989fa050a129d819c1ecd5ded8ab9bff74",
+  "vocabulary_path": "artifacts/vectorizers/keras_vocabulary_12000.txt",
+  "vocabulary_sha256": "629ffabb4e0befad2b618f23298a95b696cf4234ee44a55992e68254fe20edba",
+  "train_token_id_source_sha256": "62e8e9059340819fa3a213ed45e2f219e134a5aec049a4b91878eda98799a185"
+}

@@ -1,0 +1,314 @@
+GPU_PREFLIGHT_PASS [('/physical_device:GPU:0', 'GPU')]
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793793386.771562   14024 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+Model: "IMDB_DL04"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout (Dropout)   │ (None, 64)        │          0 │ lstm[0][0]        │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ dropout[0][0]     │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-04-s42 smoke False epoch_budget 10 dropout True early_stopping False params 1242305
+Epoch 1/10
+155/155 - 4s - 23ms/step - accuracy: 0.7102 - loss: 0.5482 - val_accuracy: 0.8154 - val_loss: 0.4193
+Epoch 2/10
+155/155 - 2s - 15ms/step - accuracy: 0.8640 - loss: 0.3399 - val_accuracy: 0.8313 - val_loss: 0.4265
+Epoch 3/10
+155/155 - 2s - 16ms/step - accuracy: 0.8810 - loss: 0.3048 - val_accuracy: 0.8372 - val_loss: 0.3990
+Epoch 4/10
+155/155 - 2s - 16ms/step - accuracy: 0.8949 - loss: 0.2644 - val_accuracy: 0.8372 - val_loss: 0.4564
+Epoch 5/10
+155/155 - 2s - 15ms/step - accuracy: 0.9172 - loss: 0.2131 - val_accuracy: 0.8164 - val_loss: 0.5705
+Epoch 6/10
+155/155 - 2s - 14ms/step - accuracy: 0.9451 - loss: 0.1520 - val_accuracy: 0.8345 - val_loss: 0.5396
+Epoch 7/10
+155/155 - 2s - 15ms/step - accuracy: 0.9418 - loss: 0.1569 - val_accuracy: 0.8142 - val_loss: 0.5631
+Epoch 8/10
+155/155 - 2s - 15ms/step - accuracy: 0.9371 - loss: 0.1640 - val_accuracy: 0.7936 - val_loss: 0.6501
+Epoch 9/10
+155/155 - 2s - 14ms/step - accuracy: 0.9664 - loss: 0.0960 - val_accuracy: 0.8166 - val_loss: 0.7243
+Epoch 10/10
+155/155 - 2s - 15ms/step - accuracy: 0.9855 - loss: 0.0493 - val_accuracy: 0.7962 - val_loss: 0.7951
+PHASE2_RESULT DL-04-s42 epochs 10 best_val_loss_epoch 3 final_post_restore_val_loss 0.795061 f1 0.799285 acc 0.796207
+PHASE2_PERSISTED DL-04-s42 val_f1 0.799285 val_accuracy 0.796207 train_seconds 24.62 model artifacts/models/DL-04-s42.keras
+Model: "IMDB_DL05"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ lstm[0][0]        │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-05-s42 smoke False epoch_budget 10 dropout False early_stopping True params 1242305
+Epoch 1/10
+155/155 - 3s - 17ms/step - accuracy: 0.7330 - loss: 0.5155 - val_accuracy: 0.8454 - val_loss: 0.3724
+Epoch 2/10
+155/155 - 2s - 15ms/step - accuracy: 0.8782 - loss: 0.3092 - val_accuracy: 0.8349 - val_loss: 0.3876
+Epoch 3/10
+155/155 - 2s - 16ms/step - accuracy: 0.8988 - loss: 0.2644 - val_accuracy: 0.7621 - val_loss: 0.5582
+Epoch 4/10
+155/155 - 2s - 16ms/step - accuracy: 0.9149 - loss: 0.2237 - val_accuracy: 0.8331 - val_loss: 0.5267
+PHASE2_RESULT DL-05-s42 epochs 4 best_val_loss_epoch 1 final_post_restore_val_loss 0.372406 f1 0.84519 acc 0.84544
+PHASE2_PERSISTED DL-05-s42 val_f1 0.84519 val_accuracy 0.84544 train_seconds 9.94 model artifacts/models/DL-05-s42.keras
+Model: "IMDB_DL06"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout (Dropout)   │ (None, 64)        │          0 │ lstm[0][0]        │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ dropout[0][0]     │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-06-s42 smoke False epoch_budget 10 dropout True early_stopping True params 1242305
+Epoch 1/10
+155/155 - 3s - 18ms/step - accuracy: 0.7106 - loss: 0.5488 - val_accuracy: 0.8067 - val_loss: 0.4381
+Epoch 2/10
+155/155 - 2s - 15ms/step - accuracy: 0.8489 - loss: 0.3714 - val_accuracy: 0.8366 - val_loss: 0.4065
+Epoch 3/10
+155/155 - 2s - 16ms/step - accuracy: 0.8924 - loss: 0.2794 - val_accuracy: 0.8408 - val_loss: 0.4339
+Epoch 4/10
+155/155 - 2s - 16ms/step - accuracy: 0.9167 - loss: 0.2301 - val_accuracy: 0.8069 - val_loss: 0.5502
+Epoch 5/10
+155/155 - 2s - 15ms/step - accuracy: 0.8898 - loss: 0.2733 - val_accuracy: 0.8307 - val_loss: 0.4626
+PHASE2_RESULT DL-06-s42 epochs 5 best_val_loss_epoch 2 final_post_restore_val_loss 0.406485 f1 0.837935 acc 0.836562
+PHASE2_PERSISTED DL-06-s42 val_f1 0.837935 val_accuracy 0.836562 train_seconds 12.31 model artifacts/models/DL-06-s42.keras
+Model: "IMDB_DL07"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_1 (LSTM)       │ (None, 160, 64)   │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_2 (LSTM)       │ (None, 64)        │     33,024 │ lstm_1[0][0],     │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ lstm_2[0][0]      │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,275,329 (4.86 MB)
+ Trainable params: 1,275,329 (4.86 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-07-s42 smoke False epoch_budget 10 dropout False early_stopping False params 1275329
+Epoch 1/10
+155/155 - 4s - 26ms/step - accuracy: 0.7562 - loss: 0.4819 - val_accuracy: 0.8428 - val_loss: 0.3633
+Epoch 2/10
+155/155 - 3s - 22ms/step - accuracy: 0.8733 - loss: 0.3102 - val_accuracy: 0.8349 - val_loss: 0.3843
+Epoch 3/10
+155/155 - 3s - 22ms/step - accuracy: 0.8975 - loss: 0.2605 - val_accuracy: 0.8263 - val_loss: 0.4104
+Epoch 4/10
+155/155 - 3s - 21ms/step - accuracy: 0.9080 - loss: 0.2336 - val_accuracy: 0.8351 - val_loss: 0.5212
+Epoch 5/10
+155/155 - 3s - 21ms/step - accuracy: 0.9252 - loss: 0.1913 - val_accuracy: 0.8130 - val_loss: 0.4472
+Epoch 6/10
+155/155 - 3s - 18ms/step - accuracy: 0.9351 - loss: 0.1709 - val_accuracy: 0.7333 - val_loss: 0.5644
+Epoch 7/10
+155/155 - 3s - 21ms/step - accuracy: 0.9381 - loss: 0.1577 - val_accuracy: 0.7839 - val_loss: 0.5324
+Epoch 8/10
+155/155 - 3s - 19ms/step - accuracy: 0.9681 - loss: 0.0889 - val_accuracy: 0.7891 - val_loss: 0.6387
+Epoch 9/10
+155/155 - 3s - 21ms/step - accuracy: 0.9830 - loss: 0.0510 - val_accuracy: 0.7645 - val_loss: 0.7866
+Epoch 10/10
+155/155 - 3s - 21ms/step - accuracy: 0.9781 - loss: 0.0626 - val_accuracy: 0.7782 - val_loss: 0.8176
+PHASE2_RESULT DL-07-s42 epochs 10 best_val_loss_epoch 1 final_post_restore_val_loss 0.817632 f1 0.755615 acc 0.778249
+PHASE2_PERSISTED DL-07-s42 val_f1 0.755615 val_accuracy 0.778249 train_seconds 32.7 model artifacts/models/DL-07-s42.keras
+Model: "IMDB_DL08"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm_1 (LSTM)       │ (None, 160, 64)   │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru_2 (GRU)         │ (None, 64)        │     24,960 │ lstm_1[0][0],     │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru_2[0][0]       │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,267,265 (4.83 MB)
+ Trainable params: 1,267,265 (4.83 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-08-s42 smoke False epoch_budget 10 dropout False early_stopping False params 1267265
+Epoch 1/10
+155/155 - 4s - 25ms/step - accuracy: 0.7494 - loss: 0.4945 - val_accuracy: 0.8442 - val_loss: 0.3658
+Epoch 2/10
+155/155 - 3s - 20ms/step - accuracy: 0.8815 - loss: 0.2971 - val_accuracy: 0.8351 - val_loss: 0.3909
+Epoch 3/10
+155/155 - 3s - 22ms/step - accuracy: 0.8997 - loss: 0.2596 - val_accuracy: 0.8212 - val_loss: 0.4468
+Epoch 4/10
+155/155 - 3s - 22ms/step - accuracy: 0.9109 - loss: 0.2320 - val_accuracy: 0.8158 - val_loss: 0.4487
+Epoch 5/10
+155/155 - 3s - 22ms/step - accuracy: 0.9228 - loss: 0.1967 - val_accuracy: 0.8341 - val_loss: 0.5118
+Epoch 6/10
+155/155 - 3s - 21ms/step - accuracy: 0.9367 - loss: 0.1598 - val_accuracy: 0.8015 - val_loss: 0.7071
+Epoch 7/10
+155/155 - 3s - 21ms/step - accuracy: 0.9483 - loss: 0.1391 - val_accuracy: 0.7986 - val_loss: 0.6252
+Epoch 8/10
+155/155 - 3s - 22ms/step - accuracy: 0.9624 - loss: 0.1014 - val_accuracy: 0.7599 - val_loss: 0.7647
+Epoch 9/10
+155/155 - 3s - 22ms/step - accuracy: 0.9675 - loss: 0.0886 - val_accuracy: 0.8142 - val_loss: 0.9936
+Epoch 10/10
+155/155 - 3s - 21ms/step - accuracy: 0.9760 - loss: 0.0667 - val_accuracy: 0.8067 - val_loss: 0.9441
+PHASE2_RESULT DL-08-s42 epochs 10 best_val_loss_epoch 1 final_post_restore_val_loss 0.944063 f1 0.811714 acc 0.806699
+PHASE2_PERSISTED DL-08-s42 val_f1 0.811714 val_accuracy 0.806699 train_seconds 33.59 model artifacts/models/DL-08-s42.keras
+Model: "IMDB_DL09"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_lstm  │ (None, 128)       │     84,480 │ embedding[0][0],  │
+│ (Bidirectional)     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │        129 │ bidirectional_ls… │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,284,609 (4.90 MB)
+ Trainable params: 1,284,609 (4.90 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-09-s42 smoke False epoch_budget 10 dropout False early_stopping False params 1284609
+Epoch 1/10
+155/155 - 4s - 26ms/step - accuracy: 0.7530 - loss: 0.4828 - val_accuracy: 0.8436 - val_loss: 0.3632
+Epoch 2/10
+155/155 - 3s - 22ms/step - accuracy: 0.8828 - loss: 0.2839 - val_accuracy: 0.8501 - val_loss: 0.3627
+Epoch 3/10
+155/155 - 3s - 22ms/step - accuracy: 0.9171 - loss: 0.2240 - val_accuracy: 0.8366 - val_loss: 0.3868
+Epoch 4/10
+155/155 - 3s - 22ms/step - accuracy: 0.9286 - loss: 0.1894 - val_accuracy: 0.8186 - val_loss: 0.5764
+Epoch 5/10
+155/155 - 3s - 23ms/step - accuracy: 0.9248 - loss: 0.1926 - val_accuracy: 0.8299 - val_loss: 0.4164
+Epoch 6/10
+155/155 - 3s - 21ms/step - accuracy: 0.9595 - loss: 0.1124 - val_accuracy: 0.8206 - val_loss: 0.4715
+Epoch 7/10
+155/155 - 3s - 21ms/step - accuracy: 0.9624 - loss: 0.1025 - val_accuracy: 0.7944 - val_loss: 0.5259
+Epoch 8/10
+155/155 - 3s - 21ms/step - accuracy: 0.9446 - loss: 0.1341 - val_accuracy: 0.7692 - val_loss: 0.6772
+Epoch 9/10
+155/155 - 3s - 21ms/step - accuracy: 0.9520 - loss: 0.1248 - val_accuracy: 0.8184 - val_loss: 0.5221
+Epoch 10/10
+155/155 - 3s - 21ms/step - accuracy: 0.9739 - loss: 0.0783 - val_accuracy: 0.8004 - val_loss: 0.5446
+PHASE2_RESULT DL-09-s42 epochs 10 best_val_loss_epoch 2 final_post_restore_val_loss 0.54457 f1 0.795788 acc 0.800444
+PHASE2_PERSISTED DL-09-s42 val_f1 0.795788 val_accuracy 0.800444 train_seconds 34.43 model artifacts/models/DL-09-s42.keras
+Model: "IMDB_DL10"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_gru   │ (None, 128)       │     63,744 │ embedding[0][0],  │
+│ (Bidirectional)     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │        129 │ bidirectional_gr… │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,263,873 (4.82 MB)
+ Trainable params: 1,263,873 (4.82 MB)
+ Non-trainable params: 0 (0.00 B)
+
+PHASE2_START DL-10-s42 smoke False epoch_budget 10 dropout False early_stopping False params 1263873
+Epoch 1/10
+155/155 - 4s - 24ms/step - accuracy: 0.7077 - loss: 0.5287 - val_accuracy: 0.8410 - val_loss: 0.3758
+Epoch 2/10
+155/155 - 3s - 21ms/step - accuracy: 0.8756 - loss: 0.2938 - val_accuracy: 0.8337 - val_loss: 0.4614
+Epoch 3/10
+155/155 - 3s - 21ms/step - accuracy: 0.9214 - loss: 0.2051 - val_accuracy: 0.8006 - val_loss: 0.5732
+Epoch 4/10
+155/155 - 3s - 20ms/step - accuracy: 0.9244 - loss: 0.1898 - val_accuracy: 0.8142 - val_loss: 0.5212
+Epoch 5/10
+155/155 - 3s - 21ms/step - accuracy: 0.9471 - loss: 0.1348 - val_accuracy: 0.8166 - val_loss: 0.5424
+Epoch 6/10
+155/155 - 3s - 21ms/step - accuracy: 0.9700 - loss: 0.0799 - val_accuracy: 0.8238 - val_loss: 0.6240
+Epoch 7/10
+155/155 - 3s - 21ms/step - accuracy: 0.9796 - loss: 0.0575 - val_accuracy: 0.8000 - val_loss: 0.6896
+Epoch 8/10
+155/155 - 3s - 20ms/step - accuracy: 0.9889 - loss: 0.0339 - val_accuracy: 0.8152 - val_loss: 0.7596
+Epoch 9/10
+155/155 - 3s - 20ms/step - accuracy: 0.9947 - loss: 0.0200 - val_accuracy: 0.8156 - val_loss: 0.8981
+Epoch 10/10
+155/155 - 3s - 21ms/step - accuracy: 0.9978 - loss: 0.0108 - val_accuracy: 0.8216 - val_loss: 0.9158
+PHASE2_RESULT DL-10-s42 epochs 10 best_val_loss_epoch 1 final_post_restore_val_loss 0.915796 f1 0.817732 acc 0.82163
+PHASE2_PERSISTED DL-10-s42 val_f1 0.817732 val_accuracy 0.82163 train_seconds 32.69 model artifacts/models/DL-10-s42.keras
+PHASE2_RUNNER_DONE ['DL-04', 'DL-05', 'DL-06', 'DL-07', 'DL-08', 'DL-09', 'DL-10']

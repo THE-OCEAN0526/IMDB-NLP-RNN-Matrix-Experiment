@@ -1,0 +1,55 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793857932.894737       1 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+GLOVE_START TL-01-s42 trainable False Train 512 Val 128 params 31937 smoke True
+Model: "IMDB_GRU_GloVe_100d"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru (GRU)           │ (None, 64)        │     31,872 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru[0][0]         │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,231,937 (4.70 MB)
+ Trainable params: 31,937 (124.75 KB)
+ Non-trainable params: 1,200,000 (4.58 MB)
+
+4/4 - 1s - 247ms/step - accuracy: 0.5000 - loss: 0.7042 - val_accuracy: 0.5391 - val_loss: 0.6831
+GLOVE_VAL TL-01-s42 accuracy 0.539062 f1 0.654971 loss 0.683096 epochs 1 sec 1.01
+GLOVE_START TL-02-s42 trainable True Train 512 Val 128 params 1231937 smoke True
+Model: "IMDB_GRU_GloVe_100d"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru (GRU)           │ (None, 64)        │     31,872 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru[0][0]         │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,231,937 (4.70 MB)
+ Trainable params: 1,231,937 (4.70 MB)
+ Non-trainable params: 0 (0.00 B)
+
+4/4 - 0s - 121ms/step - accuracy: 0.4941 - loss: 0.7043 - val_accuracy: 0.5391 - val_loss: 0.6835
+GLOVE_VAL TL-02-s42 accuracy 0.539062 f1 0.654971 loss 0.683482 epochs 1 sec 0.5
+GLOVE_OPTIONAL_TRAINING_COMPLETE ['TL-01-s42', 'TL-02-s42']

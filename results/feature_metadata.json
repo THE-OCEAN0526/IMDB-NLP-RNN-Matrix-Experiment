@@ -1,0 +1,97 @@
+{
+  "version": "dedup_v1.1",
+  "config_sha256": "6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664",
+  "manifest_split_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "preprocessing_version": "phase0-text-v1",
+  "fitted_on": "dedup_v1.1 train only",
+  "fit_policy": {
+    "bow": "fit_transform(train)",
+    "tfidf": "fit_transform(train)",
+    "keras": "adapt(train)"
+  },
+  "validation_test_policy": {
+    "bow": "transform only",
+    "tfidf": "transform only",
+    "keras": "inference only"
+  },
+  "features": {
+    "bow": 12000,
+    "tfidf": 12000,
+    "keras": 12000
+  },
+  "vectorizers_sha256": {
+    "bow_count_vectorizer.joblib": "85c322fe98f8ce9f6ae9845d5d03b1d59224507c39098703ece24911a302301d",
+    "tfidf_vectorizer.joblib": "7c26536b35a03baa11eb4b7827ba92a2dd1aa4920dbdbcceb48d789fc05a1ba8"
+  },
+  "sparse_matrices": {
+    "bow_train": {
+      "rows": 19823,
+      "features": 12000,
+      "nnz": 2615491,
+      "sha256": "ae4b96b9d0215629b94753e13f1fd637719cc525ce478966f657e38a7fb419c6"
+    },
+    "bow_validation": {
+      "rows": 4956,
+      "features": 12000,
+      "nnz": 659445,
+      "sha256": "43da88b0eb89c0d53c5ce24e015cd9fdbad789157ab2371a4782f6d5446d65e6"
+    },
+    "bow_test": {
+      "rows": 25000,
+      "features": 12000,
+      "nnz": 3224530,
+      "sha256": "2406d795b2391e72a4eb5982e02721f83290d397bbdbe7ac87de56e5892ef1e8"
+    },
+    "tfidf_train": {
+      "rows": 19823,
+      "features": 12000,
+      "nnz": 2615491,
+      "sha256": "4615dad36e2ad8ab5de653b1b7a1da0c36fee825d291e7a2a142ba2278f59160"
+    },
+    "tfidf_validation": {
+      "rows": 4956,
+      "features": 12000,
+      "nnz": 659445,
+      "sha256": "7a594ae01b748f02cf69dd9ba3dd8bb21f62351732e74b0c8827fd6534ed7ee0"
+    },
+    "tfidf_test": {
+      "rows": 25000,
+      "features": 12000,
+      "nnz": 3224530,
+      "sha256": "1c20d637998076e06e6154b8005917731496e2eeb9e0ae59334963c091716be4"
+    }
+  },
+  "keras_vocabulary_sha256": "629ffabb4e0befad2b618f23298a95b696cf4234ee44a55992e68254fe20edba",
+  "keras_token_ids_sha256": "62e8e9059340819fa3a213ed45e2f219e134a5aec049a4b91878eda98799a185",
+  "sequence_length": 160,
+  "lengths": {
+    "train": {
+      "rows": 19823,
+      "mean_token_count": 231.098,
+      "truncated_records": 10941,
+      "truncated_fraction": 0.551935,
+      "oov_token_fraction_before_truncation": 0.108112
+    },
+    "validation": {
+      "rows": 4956,
+      "mean_token_count": 234.105,
+      "truncated_records": 2743,
+      "truncated_fraction": 0.553471,
+      "oov_token_fraction_before_truncation": 0.110814
+    },
+    "test": {
+      "rows": 25000,
+      "mean_token_count": 226.25,
+      "truncated_records": 13583,
+      "truncated_fraction": 0.54332,
+      "oov_token_fraction_before_truncation": 0.112527
+    }
+  },
+  "versions": {
+    "tensorflow": "2.20.0",
+    "scikit_learn": "1.9.1",
+    "scipy": "1.17.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  }
+}

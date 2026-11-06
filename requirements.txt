@@ -1,0 +1,11 @@
+# Observed installed versions; not clean-environment tested
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.9.1
+tensorflow==2.20.0
+keras==3.15.1
+scipy==1.17.1
+matplotlib==3.11.2
+pyarrow==26.0.0
+joblib==1.6.0
+PyYAML==6.0.3

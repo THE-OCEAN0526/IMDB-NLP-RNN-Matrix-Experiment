@@ -1,0 +1,17 @@
+test_a_seven_conditions_and_unqiue_runs (test_gate_b.GateB.test_a_seven_conditions_and_unqiue_runs) ... ok
+test_b_gate_a_provenance_and_frozen_settings (test_gate_b.GateB.test_b_gate_a_provenance_and_frozen_settings) ... ok
+test_c_official_test_remains_sealed (test_gate_b.GateB.test_c_official_test_remains_sealed) ... ok
+test_d_all_validation_predictions_and_labels (test_gate_b.GateB.test_d_all_validation_predictions_and_labels) ... ok
+test_e_metrics_and_confusion_recomputed_from_saved_predictions (test_gate_b.GateB.test_e_metrics_and_confusion_recomputed_from_saved_predictions) ... ok
+test_f_model_artifacts_exist_and_nonempty (test_gate_b.GateB.test_f_model_artifacts_exist_and_nonempty) ... ok
+test_g_knn_svc_candidates_and_exact_classifiers (test_gate_b.GateB.test_g_knn_svc_candidates_and_exact_classifiers) ... ok
+test_h_rnn_architecture_epochs_and_training_history (test_gate_b.GateB.test_h_rnn_architecture_epochs_and_training_history) ... WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793792562.936850   11227 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+ok
+test_i_all_figures_exist (test_gate_b.GateB.test_i_all_figures_exist) ... ok
+test_j_splits_still_match_gate_a_and_sample_count (test_gate_b.GateB.test_j_splits_still_match_gate_a_and_sample_count) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.133s
+
+OK

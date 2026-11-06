@@ -1,0 +1,40 @@
+# Frozen Phase 2 matrix conditions: keep Gate A/B untouched.
+phase: 2
+version: phase2-control-v1
+seed: 42
+dataset_variant: dedup_v1.1
+phase1_config_path: config/phase1_baselines.yaml
+phase1_config_sha256: 5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29
+split_assignments_sha256: 9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9
+test_policy: do_not_evaluate_until_gate_e
+shared:
+  embedding_dim: 100
+  hidden_units: 64
+  vocab_size: 12000
+  sequence_length: 160
+  mask_zero: true
+  batch_size: 128
+  epochs: 10
+  optimizer: Adam
+  learning_rate: 0.001
+  loss: binary_crossentropy
+  threshold: 0.5
+  train_shuffle: true
+  seed: 42
+regularization:
+  baseline: DL-02-s42
+  units: 64
+  dropout: 0.3
+  monitor: val_loss
+  patience: 3
+  min_delta: 0.0
+  restore_best_weights: true
+  conditions:
+    DL-04: {dropout: true, early_stopping: false}
+    DL-05: {dropout: false, early_stopping: true}
+    DL-06: {dropout: true, early_stopping: true}
+architectures:
+  DL-07: StackedLSTM
+  DL-08: LSTM_GRU
+  DL-09: BidirectionalLSTM
+  DL-10: BidirectionalGRU

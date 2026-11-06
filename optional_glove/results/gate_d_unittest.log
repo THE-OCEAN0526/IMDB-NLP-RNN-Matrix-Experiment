@@ -1,0 +1,18 @@
+test_a_optional_after_original_gate_e_preserved (test_gate_d_optional_glove.OptionalGateD.test_a_optional_after_original_gate_e_preserved) ... ok
+test_b_config_and_two_new_ids_and_original_baseline (test_gate_d_optional_glove.OptionalGateD.test_b_config_and_two_new_ids_and_original_baseline) ... ok
+test_c_source_binary_hash_400k_100d (test_gate_d_optional_glove.OptionalGateD.test_c_source_binary_hash_400k_100d) ... ok
+test_d_vocab_pad_oov_and_matched_coverage (test_gate_d_optional_glove.OptionalGateD.test_d_vocab_pad_oov_and_matched_coverage) ... ok
+test_e_train_only_frozen_token_vocab_and_sizes (test_gate_d_optional_glove.OptionalGateD.test_e_train_only_frozen_token_vocab_and_sizes) ... ok
+test_f_both_full_runs_and_files (test_gate_d_optional_glove.OptionalGateD.test_f_both_full_runs_and_files) ... ok
+test_g_validation_preds_align_and_metrics_recomputed (test_gate_d_optional_glove.OptionalGateD.test_g_validation_preds_align_and_metrics_recomputed) ... ok
+test_h_models_have_same_gru_and_respective_frozen_trainable (test_gate_d_optional_glove.OptionalGateD.test_h_models_have_same_gru_and_respective_frozen_trainable) ... 2026-11-05 05:56:09.919180: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+ok
+test_i_loss_history_and_figures (test_gate_d_optional_glove.OptionalGateD.test_i_loss_history_and_figures) ... ok
+test_j_comparison_3_conditions_and_independent_results (test_gate_d_optional_glove.OptionalGateD.test_j_comparison_3_conditions_and_independent_results) ... ok
+test_k_notebook06_all_cells_executed_without_errors (test_gate_d_optional_glove.OptionalGateD.test_k_notebook06_all_cells_executed_without_errors) ... ok
+test_l_no_optional_test_predictions_or_official_test_changes (test_gate_d_optional_glove.OptionalGateD.test_l_no_optional_test_predictions_or_official_test_changes) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.566s
+
+OK

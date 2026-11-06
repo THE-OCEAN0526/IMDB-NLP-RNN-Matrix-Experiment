@@ -1,0 +1,15 @@
+overall_rank,run_id,family,display_name,val_accuracy,val_precision,val_recall,val_f1,val_loss,trainable_params,train_time_sec,inference_time_sec,epochs_completed,model_path,predictions_path
+1,ML-04-s42,Traditional ML,TF-IDF + SVC,0.892050040355,0.887390959556,0.899156287666,0.893234883257,,,274.2794,48.0708,,artifacts/models/ML-04-s42.joblib,results/predictions/ML-04-s42_validation.csv
+2,ML-02-s42,Traditional ML,BoW + SVC,0.876715092817,0.877108433735,0.877460827642,0.8772845953,,,194.5276,34.291,,artifacts/models/ML-02-s42.joblib,results/predictions/ML-02-s42_validation.csv
+3,DL-05-s42,Deep Learning,LSTM + EarlyStopping,0.845439870864,0.850345668971,0.840096424267,0.845189975748,0.372405797243,1242305,9.943,0.2102,4,artifacts/models/DL-05-s42.keras,results/predictions/DL-05-s42_validation.csv
+4,DL-06-s42,Deep Learning,LSTM + Dropout + ES,0.836561743341,0.834595456357,0.841301727601,0.83793517407,0.406485438347,1242305,12.3065,0.2213,5,artifacts/models/DL-06-s42.keras,results/predictions/DL-06-s42_validation.csv
+5,DL-02-s42,Deep Learning,LSTM,0.824656981437,0.852480417755,0.787063077541,0.818466680593,0.79236894846,1242305,13.6681,0.1738,10,artifacts/models/DL-02-s42.keras,results/predictions/DL-02-s42_validation.csv
+6,DL-10-s42,Deep Learning,Bidirectional GRU,0.821630347054,0.839898348158,0.796705504219,0.817731958763,0.915796399117,1263873,32.6914,0.3146,10,artifacts/models/DL-10-s42.keras,results/predictions/DL-10-s42_validation.csv
+7,DL-08-s42,Deep Learning,LSTM + GRU,0.806698950767,0.794536360139,0.829650462033,0.811713836478,0.944063007832,1267265,33.59,0.304,10,artifacts/models/DL-08-s42.keras,results/predictions/DL-08-s42_validation.csv
+8,DL-03-s42,Deep Learning,GRU,0.809927360775,0.812525252525,0.807955002009,0.810233682514,0.774520635605,1231937,12.246,0.164,10,artifacts/models/DL-03-s42.keras,results/predictions/DL-03-s42_validation.csv
+9,DL-04-s42,Deep Learning,LSTM + Dropout,0.796206618241,0.79079826976,0.807955002009,0.799284578696,0.795061349869,1242305,24.6234,0.2244,10,artifacts/models/DL-04-s42.keras,results/predictions/DL-04-s42_validation.csv
+10,DL-09-s42,Deep Learning,Bidirectional LSTM,0.800443906376,0.818606627018,0.774206508638,0.795787734875,0.544569969177,1284609,34.4293,0.3392,10,artifacts/models/DL-09-s42.keras,results/predictions/DL-09-s42_validation.csv
+11,ML-03-s42,Traditional ML,TF-IDF + KNN,0.768563357546,0.750934928945,0.806749698674,0.777842339725,,,0.003,1.827,,artifacts/models/ML-03-s42.joblib,results/predictions/ML-03-s42_validation.csv
+12,DL-07-s42,Deep Learning,Stacked LSTM,0.778248587571,0.846115537849,0.682603455203,0.755614854347,0.817632138729,1275329,32.699,0.3152,10,artifacts/models/DL-07-s42.keras,results/predictions/DL-07-s42_validation.csv
+13,DL-01-s42,Deep Learning,SimpleRNN,0.705004035513,0.697728147863,0.728003214142,0.712544239088,1.17018282413,1210625,18.8431,0.4337,10,artifacts/models/DL-01-s42.keras,results/predictions/DL-01-s42_validation.csv
+14,ML-01-s42,Traditional ML,BoW + KNN,0.643462469734,0.636846095527,0.674969867417,0.655354008192,,,0.0058,2.0819,,artifacts/models/ML-01-s42.joblib,results/predictions/ML-01-s42_validation.csv

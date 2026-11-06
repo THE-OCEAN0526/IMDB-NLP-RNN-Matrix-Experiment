@@ -1,0 +1,73 @@
+{
+  "stage": "optional GloVe 100d, after Gate E",
+  "data": "dedup_v1.1",
+  "test_evaluations": 0,
+  "source_sha256": "4e29827d144c2097654433b1c4be41ce320949f0792ab820991a68fa3e34d494",
+  "aligned_sha256": "0ddb2fdf9c12ca310494649da8225bbfe74b650104fa31bd90859e44a8862aee",
+  "compared_runs": [
+    "DL-03-s42",
+    "TL-01-s42",
+    "TL-02-s42"
+  ],
+  "new_models": [
+    "TL-01-s42",
+    "TL-02-s42"
+  ],
+  "comparison_csv_sha256": "ee1b73fe5a402ea45a0e147fe4c66757bfff6e2f56353c81902367c537c82fc1",
+  "metrics": [
+    {
+      "run_id": "DL-03-s42",
+      "embedding_initialization": "Random Trainable",
+      "embedding_trainable": true,
+      "model": "GRU(64)",
+      "dataset": "dedup_v1.1",
+      "val_accuracy": 0.8099273607748184,
+      "val_precision": 0.8125252525252525,
+      "val_recall": 0.8079550020088389,
+      "val_f1": 0.8102336825141015,
+      "val_loss": 0.7745206356048584,
+      "trainable_params": 1231937,
+      "epochs_completed": 10,
+      "train_time_sec": 12.246,
+      "source": "Existing independent Phase1/GateB baseline; no re-training"
+    },
+    {
+      "run_id": "TL-01-s42",
+      "embedding_initialization": "GloVe_100d_Frozen",
+      "embedding_trainable": false,
+      "model": "GRU(64)",
+      "dataset": "dedup_v1.1",
+      "val_accuracy": 0.8127522195318806,
+      "val_precision": 0.8631921824104235,
+      "val_recall": 0.7452792286058658,
+      "val_f1": 0.7999137559292798,
+      "val_loss": 0.40838751196861267,
+      "trainable_params": 31937,
+      "epochs_completed": 10,
+      "train_time_sec": 23.00341,
+      "source": "New post Gate E exploratory GloVe Validation-only run"
+    },
+    {
+      "run_id": "TL-02-s42",
+      "embedding_initialization": "GloVe_100d_FineTuning",
+      "embedding_trainable": true,
+      "model": "GRU(64)",
+      "dataset": "dedup_v1.1",
+      "val_accuracy": 0.8198143664245359,
+      "val_precision": 0.888510223953262,
+      "val_recall": 0.7332261952591402,
+      "val_f1": 0.8034338542813119,
+      "val_loss": 0.9013001918792725,
+      "trainable_params": 1231937,
+      "epochs_completed": 10,
+      "train_time_sec": 23.17483,
+      "source": "New post Gate E exploratory GloVe Validation-only run"
+    }
+  ],
+  "delta_f1_pp": {
+    "frozen_minus_random": -1.0319926584821726,
+    "finetune_minus_random": -0.6799828232789684,
+    "finetune_minus_frozen": 0.35200983520320417
+  },
+  "original_frozen_file_count": 26
+}

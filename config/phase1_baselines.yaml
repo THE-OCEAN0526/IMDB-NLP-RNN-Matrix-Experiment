@@ -1,0 +1,47 @@
+# Frozen Phase 1 comparison settings (not editing approved Gate A config).
+phase: 1
+version: phase1-baselines-v1
+seed: 42
+dataset_variant: dedup_v1.1
+phase0_config_sha256: 6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664
+split_assignments_sha256: 9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9
+score_selection: val_f1
+test_policy: do_not_evaluate_in_phase1
+ml:
+  vectors: [bow, tfidf]
+  knn:
+    classifier: KNeighborsClassifier
+    algorithm: brute
+    metric: cosine
+    weights: uniform
+    n_jobs: 2
+    k_candidates: [3, 5]
+  svc:
+    classifier: SVC
+    kernel: linear
+    probability: false
+    cache_size_mb: 512
+    C_candidates: [0.1, 1.0]
+deep_learning:
+  rnn_types: [SimpleRNN, LSTM, GRU]
+  embedding_dim: 100
+  hidden_units: 64
+  batch_size: 128
+  epochs: 10
+  learning_rate: 0.001
+  optimizer: Adam
+  loss: binary_crossentropy
+  output: sigmoid
+  dropout: 0.0
+  early_stopping: false
+  mask_zero: true
+  monitor_val: true
+  primary_threshold: 0.5
+  device: GPU0_inside_container
+  train_shuffle: true
+evaluation:
+  include_validation_only: true
+  save_predictions: true
+  confusion_matrix_labels: [0, 1]
+  metrics: [accuracy, precision, recall, f1, confusion_matrix]
+  rank_using: validation_f1

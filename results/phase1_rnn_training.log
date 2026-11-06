@@ -1,0 +1,140 @@
+VISIBLE_GPUS [('/physical_device:GPU:0', 'GPU')]
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793792090.136565    6073 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+START DL-01 SimpleRNN smoke False train 19823 val 4956 trainable_params 1210625
+Model: "IMDB_SimpleRNN_baseline"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ simplernn           │ (None, 64)        │     10,560 │ embedding[0][0],  │
+│ (SimpleRNN)         │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ simplernn[0][0]   │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,210,625 (4.62 MB)
+ Trainable params: 1,210,625 (4.62 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 1/10
+I0000 00:00:1793792091.548350    6155 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+155/155 - 4s - 23ms/step - accuracy: 0.5848 - loss: 0.6682 - val_accuracy: 0.7098 - val_loss: 0.5928
+Epoch 2/10
+155/155 - 2s - 11ms/step - accuracy: 0.7741 - loss: 0.4902 - val_accuracy: 0.7258 - val_loss: 0.5834
+Epoch 3/10
+155/155 - 2s - 11ms/step - accuracy: 0.9375 - loss: 0.1788 - val_accuracy: 0.7460 - val_loss: 0.6756
+Epoch 4/10
+155/155 - 2s - 11ms/step - accuracy: 0.9783 - loss: 0.0690 - val_accuracy: 0.7561 - val_loss: 0.7429
+Epoch 5/10
+155/155 - 2s - 11ms/step - accuracy: 0.9925 - loss: 0.0307 - val_accuracy: 0.7637 - val_loss: 0.7883
+Epoch 6/10
+155/155 - 2s - 11ms/step - accuracy: 0.9979 - loss: 0.0123 - val_accuracy: 0.7105 - val_loss: 0.9472
+Epoch 7/10
+155/155 - 2s - 11ms/step - accuracy: 0.9994 - loss: 0.0049 - val_accuracy: 0.6770 - val_loss: 1.1079
+Epoch 8/10
+155/155 - 2s - 11ms/step - accuracy: 0.9998 - loss: 0.0025 - val_accuracy: 0.6911 - val_loss: 1.1420
+Epoch 9/10
+155/155 - 2s - 11ms/step - accuracy: 1.0000 - loss: 9.5087e-04 - val_accuracy: 0.7098 - val_loss: 1.1260
+Epoch 10/10
+155/155 - 2s - 11ms/step - accuracy: 1.0000 - loss: 5.0217e-04 - val_accuracy: 0.7050 - val_loss: 1.1702
+PERSISTED DL-01-s42 val_accuracy 0.705004 val_f1 0.712544 val_loss 1.170183 params 1210625 epochs 10 train_seconds 18.843
+START DL-02 LSTM smoke False train 19823 val 4956 trainable_params 1242305
+Model: "IMDB_LSTM_baseline"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ lstm (LSTM)         │ (None, 64)        │     42,240 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ lstm[0][0]        │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,242,305 (4.74 MB)
+ Trainable params: 1,242,305 (4.74 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 1/10
+155/155 - 2s - 15ms/step - accuracy: 0.7331 - loss: 0.5156 - val_accuracy: 0.8454 - val_loss: 0.3724
+Epoch 2/10
+155/155 - 1s - 8ms/step - accuracy: 0.8764 - loss: 0.3134 - val_accuracy: 0.8341 - val_loss: 0.3849
+Epoch 3/10
+155/155 - 1s - 8ms/step - accuracy: 0.9037 - loss: 0.2565 - val_accuracy: 0.8271 - val_loss: 0.4254
+Epoch 4/10
+155/155 - 1s - 8ms/step - accuracy: 0.9151 - loss: 0.2241 - val_accuracy: 0.7780 - val_loss: 0.5237
+Epoch 5/10
+155/155 - 1s - 8ms/step - accuracy: 0.9114 - loss: 0.2252 - val_accuracy: 0.8341 - val_loss: 0.5109
+Epoch 6/10
+155/155 - 1s - 8ms/step - accuracy: 0.9374 - loss: 0.1678 - val_accuracy: 0.8156 - val_loss: 0.5375
+Epoch 7/10
+155/155 - 1s - 8ms/step - accuracy: 0.9493 - loss: 0.1359 - val_accuracy: 0.8168 - val_loss: 0.5584
+Epoch 8/10
+155/155 - 1s - 8ms/step - accuracy: 0.9677 - loss: 0.0942 - val_accuracy: 0.8271 - val_loss: 0.5779
+Epoch 9/10
+155/155 - 1s - 8ms/step - accuracy: 0.9668 - loss: 0.0965 - val_accuracy: 0.8174 - val_loss: 0.7755
+Epoch 10/10
+155/155 - 1s - 8ms/step - accuracy: 0.9769 - loss: 0.0719 - val_accuracy: 0.8247 - val_loss: 0.7924
+PERSISTED DL-02-s42 val_accuracy 0.824657 val_f1 0.818467 val_loss 0.792369 params 1242305 epochs 10 train_seconds 13.668
+START DL-03 GRU smoke False train 19823 val 4956 trainable_params 1231937
+Model: "IMDB_GRU_baseline"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru (GRU)           │ (None, 64)        │     31,872 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru[0][0]         │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,231,937 (4.70 MB)
+ Trainable params: 1,231,937 (4.70 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 1/10
+155/155 - 2s - 10ms/step - accuracy: 0.6505 - loss: 0.5995 - val_accuracy: 0.8200 - val_loss: 0.4143
+Epoch 2/10
+155/155 - 1s - 8ms/step - accuracy: 0.8558 - loss: 0.3416 - val_accuracy: 0.8275 - val_loss: 0.4010
+Epoch 3/10
+155/155 - 1s - 8ms/step - accuracy: 0.9032 - loss: 0.2537 - val_accuracy: 0.8301 - val_loss: 0.5169
+Epoch 4/10
+155/155 - 1s - 8ms/step - accuracy: 0.9098 - loss: 0.2302 - val_accuracy: 0.8198 - val_loss: 0.4727
+Epoch 5/10
+155/155 - 1s - 8ms/step - accuracy: 0.9382 - loss: 0.1684 - val_accuracy: 0.8083 - val_loss: 0.5450
+Epoch 6/10
+155/155 - 1s - 8ms/step - accuracy: 0.9529 - loss: 0.1289 - val_accuracy: 0.8160 - val_loss: 0.5795
+Epoch 7/10
+155/155 - 1s - 8ms/step - accuracy: 0.9683 - loss: 0.0919 - val_accuracy: 0.8168 - val_loss: 0.6644
+Epoch 8/10
+155/155 - 1s - 8ms/step - accuracy: 0.9818 - loss: 0.0578 - val_accuracy: 0.7710 - val_loss: 1.0037
+Epoch 9/10
+155/155 - 1s - 8ms/step - accuracy: 0.9850 - loss: 0.0483 - val_accuracy: 0.7789 - val_loss: 0.9750
+Epoch 10/10
+155/155 - 1s - 8ms/step - accuracy: 0.9823 - loss: 0.0541 - val_accuracy: 0.8099 - val_loss: 0.7745
+PERSISTED DL-03-s42 val_accuracy 0.809927 val_f1 0.810234 val_loss 0.774521 params 1231937 epochs 10 train_seconds 12.246
+RNN_BASELINES_FINISHED ['DL-01', 'DL-02', 'DL-03']

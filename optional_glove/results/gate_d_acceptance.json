@@ -1,0 +1,66 @@
+{
+  "stage": "Optional Phase 3 / Gate D, post Gate E exploratory GloVe",
+  "status": "PASS_POST_GATE_E_VALIDATION_ONLY",
+  "original_gate_e_status": "PASS_UNCHANGED",
+  "timestamp_utc": "2026-11-05T05:58:28.560412+00:00",
+  "dataset_variant": "dedup_v1.1",
+  "original_required_conditions": 14,
+  "new_optional_conditions": 2,
+  "total_stored_conditions_across_separate_registries": 16,
+  "baseline_reused": "DL-03-s42",
+  "test_evaluations_performed": 0,
+  "comparison_data": "Validation only (4956 samples)",
+  "new_runs": [
+    "TL-01-s42",
+    "TL-02-s42"
+  ],
+  "glove_source_format": "word2vec_binary_float32",
+  "glove_source_sha256": "4e29827d144c2097654433b1c4be41ce320949f0792ab820991a68fa3e34d494",
+  "glove_source_zip_md5": "f19871e3053750198004fb2acc1f8d44",
+  "aligned_matrix_sha256": "0ddb2fdf9c12ca310494649da8225bbfe74b650104fa31bd90859e44a8862aee",
+  "vocab_exact_match_fraction": 0.7198699783297217,
+  "train_token_weighted_coverage_excluding_UNK": 0.9094683437285841,
+  "original_gate_e_snapshots_unchanged": 26,
+  "independent_tests": {
+    "passed": 12,
+    "failed": 0,
+    "log": "optional_glove/results/gate_d_unittest.log",
+    "log_sha256": "20facb03b04eadd2aa59cdfa75a2d4dafe0c1305bad54decb1421b8f5678aa81"
+  },
+  "full_regression": {
+    "passed": 57,
+    "failed": 0,
+    "log": "optional_glove/results/full_regression_ABCD_E.log",
+    "log_sha256": "06537522b27ac39a45a10be3e0b43752dd617db3b32286c94766c6dcf1854755"
+  },
+  "notebook06": {
+    "path": "notebooks/06_IMDB_GloVe_Transfer_Learning.ipynb",
+    "executed_code_cells": 7,
+    "errors": 0,
+    "sha256": "2719a49eea2f5078a19c456681929818d9b5189d21dddcc8fc31c37b5ab15f0f"
+  },
+  "validation_metrics": {
+    "DL-03-s42": {
+      "name": "Random Embedding (baseline)",
+      "val_f1": 0.8102336825141015,
+      "val_accuracy": 0.8099273607748184,
+      "trainable_params": 1231937
+    },
+    "TL-01-s42": {
+      "name": "GloVe Frozen",
+      "val_f1": 0.7999137559292798,
+      "val_accuracy": 0.8127522195318806,
+      "trainable_params": 31937
+    },
+    "TL-02-s42": {
+      "name": "GloVe Fine-tuning",
+      "val_f1": 0.8034338542813119,
+      "val_accuracy": 0.8198143664245359,
+      "trainable_params": 1231937
+    }
+  },
+  "report": "optional_glove/results/OPTIONAL_GLOVE_REPORT.md",
+  "report_sha256": "144364874061969d859fdcf4d1f80bae11a85a94c849a126d184874931661c01",
+  "original_test_unchanged": "Test results from locked prior Gate E remain the ONLY official independent Test.",
+  "note": "Optional GloVe was added after official Test; must not select it using already exposed Test results."
+}

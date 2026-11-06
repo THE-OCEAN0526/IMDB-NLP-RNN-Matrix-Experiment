@@ -1,0 +1,7 @@
+OFFICIAL_TEST_ONCE_STARTED 2026-11-04T12:32:54.945208+00:00
+OFFICIAL_TEST_ML_COMPLETE ML-04-s42 accuracy 0.88096 f1 0.880338 seconds 239.22
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793795814.841550   24836 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+OFFICIAL_TEST_DL_COMPLETE DL-05-s42 accuracy 0.8344 f1 0.831474 bce 0.387129 seconds 1.04
+ONE_TIME_OFFICIAL_TEST_OUTPUT_COMMITTED /workspace/imdb_matrix_experiment/variants/dedup_v1_1/results/final_test
+FINAL_RESULTS {"ML-04-s42": {"accuracy": 0.88096, "precision": 0.8849636, "recall": 0.87576, "f1": 0.8803378}, "DL-05-s42": {"accuracy": 0.8344, "precision": 0.846428, "recall": 0.81704, "f1": 0.8314744}}

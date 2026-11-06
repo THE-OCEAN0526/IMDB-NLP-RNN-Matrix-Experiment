@@ -1,0 +1,26 @@
+{
+  "run_id": "ML-01",
+  "dataset": "dedup_v1.1",
+  "selection_only_on": "Validation",
+  "candidates": [
+    {
+      "parameter": "k",
+      "value": 3,
+      "val_accuracy": 0.6303470540758677,
+      "val_f1": 0.6437183975106963,
+      "train_time_sec": 0.0058,
+      "inference_time_sec": 2.0589
+    },
+    {
+      "parameter": "k",
+      "value": 5,
+      "val_accuracy": 0.6434624697336562,
+      "val_f1": 0.6553540081919251,
+      "train_time_sec": 0.0058,
+      "inference_time_sec": 2.0589
+    }
+  ],
+  "chosen_parameter": 5,
+  "hyperparameter_search_total_time_sec": 4.164,
+  "test_rows_used": 0
+}

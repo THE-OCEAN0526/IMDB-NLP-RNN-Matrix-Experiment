@@ -1,0 +1,133 @@
+{
+  "version": "dedup_v1.1",
+  "phase": "0",
+  "gate": "A",
+  "status": "PASS_EXACT_CLEANED_TEXT_CROSS_SPLIT",
+  "verified_at_utc": "2026-11-04T11:22:37.431898+00:00",
+  "test_result": {
+    "passed": 11,
+    "failed": 0,
+    "exit_code": 0,
+    "log_sha256": "0a23d5cc3458aa36acb97e16ab2bd9187315c62bcfb90ea4481533bfbd0f8c87"
+  },
+  "notebooks": {
+    "00_IMDB_Data_Preparation.ipynb": {
+      "code_cells": 4,
+      "executed": 4,
+      "errors": [],
+      "sha256": "e8a9362c48cf1cd742e66ec1ef2280874d78333220ed9540699cd5ee6ed34836"
+    },
+    "01_IMDB_Preprocessing_Vectorization.ipynb": {
+      "code_cells": 5,
+      "executed": 5,
+      "errors": [],
+      "sha256": "4df65e70659acadbcfbe04d2ae93cc8441844d83d7564cb6e058412abbc4c795"
+    }
+  },
+  "dataset_counts": {
+    "train": {
+      "rows": 19823,
+      "labels": {
+        "0": 9869,
+        "1": 9954
+      },
+      "sha256": "119f5201290bc5d555354738ec7bd2410d3f876508058ee393966227c9bb62ad",
+      "source_ids_sha256": "0ac4e54e9f9dea0292d10a8349cfb554e58456271ccddffa476d0510b494d0b2",
+      "unique_cleaned_text": 19823
+    },
+    "validation": {
+      "rows": 4956,
+      "labels": {
+        "0": 2467,
+        "1": 2489
+      },
+      "sha256": "d04f164fd94352fc5156548e23e5a8d885053f599252d9b273eca1ff38cf7fc8",
+      "source_ids_sha256": "bf88a23488e4ccc54ef37262e66834981b9dd34c9ab7284bd7149f42995bfc9c",
+      "unique_cleaned_text": 4956
+    },
+    "test": {
+      "rows": 25000,
+      "labels": {
+        "0": 12500,
+        "1": 12500
+      },
+      "sha256": "66ff71f324dc3e43f534e59a54ba2d0587ac6e44526cc21c41d58a291d839e34",
+      "source_ids_sha256": "933e8bd59bc47a8a9508418f628023403bd6c9c23823a25667e7b39322b2bb3c",
+      "unique_cleaned_text": 24799
+    }
+  },
+  "removed_from_original_train": {
+    "overlap_with_official_test": {
+      "rows": 123,
+      "labels": {
+        "0": 95,
+        "1": 28
+      }
+    },
+    "duplicates_within_remaining_pool": {
+      "rows": 98,
+      "labels": {
+        "0": 69,
+        "1": 29
+      }
+    }
+  },
+  "cross_split_full_cleaned_text_overlap_counts": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "preserved_test_internal_duplicates": {
+    "groups": 193,
+    "extra_rows": 201
+  },
+  "config_sha256": "6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664",
+  "split_assignments_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "feature_metadata_sha256": "6d4c3b05471b958f20b959817edd69cba36bb02eb2c3cfea2e6d421e960d2a74",
+  "source_sha256": {
+    "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c",
+    "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da"
+  },
+  "preprocessing_version": "phase0-text-v1",
+  "fit_policy": {
+    "bow": "fit_transform(train)",
+    "tfidf": "fit_transform(train)",
+    "keras": "adapt(train)"
+  },
+  "features": {
+    "bow": 12000,
+    "tfidf": 12000,
+    "keras": 12000
+  },
+  "sequence_length": 160,
+  "lengths": {
+    "train": {
+      "rows": 19823,
+      "mean_token_count": 231.098,
+      "truncated_records": 10941,
+      "truncated_fraction": 0.551935,
+      "oov_token_fraction_before_truncation": 0.108112
+    },
+    "validation": {
+      "rows": 4956,
+      "mean_token_count": 234.105,
+      "truncated_records": 2743,
+      "truncated_fraction": 0.553471,
+      "oov_token_fraction_before_truncation": 0.110814
+    },
+    "test": {
+      "rows": 25000,
+      "mean_token_count": 226.25,
+      "truncated_records": 13583,
+      "truncated_fraction": 0.54332,
+      "oov_token_fraction_before_truncation": 0.112527
+    }
+  },
+  "v1_0_unchanged_by_sha256": true,
+  "limitations": [
+    "Exact full-cleaned-text collisions across splits are zero. Near duplicates and semantic overlaps were not checked.",
+    "Official Test internal duplicate reviews deliberately retained to preserve the official benchmark.",
+    "Token length 160 truncates over 50% of comments; report this limitation in Phase 1.",
+    "No model training or Test-driven model selection performed in Phase 0."
+  ]
+}

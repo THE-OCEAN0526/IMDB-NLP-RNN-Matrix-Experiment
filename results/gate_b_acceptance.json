@@ -1,0 +1,138 @@
+{
+  "phase": "1",
+  "gate": "B",
+  "status": "PASS",
+  "timestamp_utc": "2026-11-04T11:43:14.139413+00:00",
+  "dataset": "dedup_v1.1",
+  "train_records": 19823,
+  "validation_records": 4956,
+  "test_records_evaluated": 0,
+  "phase1_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29",
+  "phase0_config_sha256": "6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664",
+  "split_assignments_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "run_count": 7,
+  "run_ids": [
+    "ML-01-s42",
+    "ML-02-s42",
+    "ML-03-s42",
+    "ML-04-s42",
+    "DL-01-s42",
+    "DL-02-s42",
+    "DL-03-s42"
+  ],
+  "gate_b_tests": {
+    "passed": 10,
+    "failed": 0,
+    "log_sha256": "1d5772180960e13f0420c5437a1577a47dc6d6a12db9b26f8813c98d6c7ae4dc"
+  },
+  "notebooks": {
+    "02_IMDB_Traditional_ML_Matrix.ipynb": {
+      "code_cells": 5,
+      "all_executed": true,
+      "saved_errors": 0,
+      "sha256": "72e4bbe6bd5d55701bae151d6f31693f27322038eb1a33f1170315bf13fa96bc"
+    },
+    "03_IMDB_RNN_Baselines.ipynb": {
+      "code_cells": 6,
+      "all_executed": true,
+      "saved_errors": 0,
+      "sha256": "a41f8aa754a88e8184bc2867d8b66271692dfc9b5507f5e1f3cb9a92b06c49c5"
+    }
+  },
+  "f1_plot": "results/figures/phase1_validation_f1_comparison.png",
+  "accuracy_plot": "results/figures/phase1_validation_accuracy_comparison.png",
+  "results": [
+    {
+      "run_id": "ML-01-s42",
+      "val_accuracy": 0.64346247,
+      "val_precision": 0.6368461,
+      "val_recall": 0.67496987,
+      "val_f1": 0.65535401,
+      "trainable_params": null,
+      "train_time_sec": 0.0058,
+      "inference_time_sec": 2.0819,
+      "model_path": "artifacts/models/ML-01-s42.joblib",
+      "predictions_path": "results/predictions/ML-01-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-02-s42",
+      "val_accuracy": 0.87671509,
+      "val_precision": 0.87710843,
+      "val_recall": 0.87746083,
+      "val_f1": 0.8772846,
+      "trainable_params": null,
+      "train_time_sec": 194.5276,
+      "inference_time_sec": 34.291,
+      "model_path": "artifacts/models/ML-02-s42.joblib",
+      "predictions_path": "results/predictions/ML-02-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-03-s42",
+      "val_accuracy": 0.76856336,
+      "val_precision": 0.75093493,
+      "val_recall": 0.8067497,
+      "val_f1": 0.77784234,
+      "trainable_params": null,
+      "train_time_sec": 0.003,
+      "inference_time_sec": 1.827,
+      "model_path": "artifacts/models/ML-03-s42.joblib",
+      "predictions_path": "results/predictions/ML-03-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-04-s42",
+      "val_accuracy": 0.89205004,
+      "val_precision": 0.88739096,
+      "val_recall": 0.89915629,
+      "val_f1": 0.89323488,
+      "trainable_params": null,
+      "train_time_sec": 274.2794,
+      "inference_time_sec": 48.0708,
+      "model_path": "artifacts/models/ML-04-s42.joblib",
+      "predictions_path": "results/predictions/ML-04-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-01-s42",
+      "val_accuracy": 0.70500404,
+      "val_precision": 0.69772815,
+      "val_recall": 0.72800321,
+      "val_f1": 0.71254424,
+      "trainable_params": 1210625,
+      "train_time_sec": 18.8431,
+      "inference_time_sec": 0.4337,
+      "model_path": "artifacts/models/DL-01-s42.keras",
+      "predictions_path": "results/predictions/DL-01-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-02-s42",
+      "val_accuracy": 0.82465698,
+      "val_precision": 0.85248042,
+      "val_recall": 0.78706308,
+      "val_f1": 0.81846668,
+      "trainable_params": 1242305,
+      "train_time_sec": 13.6681,
+      "inference_time_sec": 0.1738,
+      "model_path": "artifacts/models/DL-02-s42.keras",
+      "predictions_path": "results/predictions/DL-02-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-03-s42",
+      "val_accuracy": 0.80992736,
+      "val_precision": 0.81252525,
+      "val_recall": 0.807955,
+      "val_f1": 0.81023368,
+      "trainable_params": 1231937,
+      "train_time_sec": 12.246,
+      "inference_time_sec": 0.164,
+      "model_path": "artifacts/models/DL-03-s42.keras",
+      "predictions_path": "results/predictions/DL-03-s42_validation.csv"
+    }
+  ],
+  "warnings": [
+    "Gate B records only Validation results; official Test sealed until Gate E.",
+    "Model selection / tuning on the same Validation set can favor selected parameters; final Test must not be used for repeated tuning.",
+    "Two SVC candidate training times are summed; KNN training time excludes the expensive nearest-neighbor Validation query.",
+    "DL baseline uses all 10 epochs without EarlyStopping or Dropout; last-epoch performance can be worse than the best Validation epoch.",
+    "Input truncation: over half the original reviews exceed 160 tokens.",
+    "GPU seed 42 does not guarantee perfect determinism across hardware and TensorFlow kernels."
+  ]
+}

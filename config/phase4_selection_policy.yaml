@@ -1,0 +1,46 @@
+# Phase 4 v1: selection and reporting policy is frozen BEFORE official Test.
+# Replaces neither Gate A/B/C configs nor any model / training result.
+phase: 4
+stage: pre_test_selection
+version: phase4-pretest-v1
+dataset_variant: dedup_v1.1
+seed: 42
+phase2_config_sha256: a13de8d435a85d888ae9565ed462c35630c88b61f0a6a7692e187e967ae436b4
+split_assignments_sha256: 9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9
+eligible_runs:
+  - ML-01-s42
+  - ML-02-s42
+  - ML-03-s42
+  - ML-04-s42
+  - DL-01-s42
+  - DL-02-s42
+  - DL-03-s42
+  - DL-04-s42
+  - DL-05-s42
+  - DL-06-s42
+  - DL-07-s42
+  - DL-08-s42
+  - DL-09-s42
+  - DL-10-s42
+selection:
+  primary_score: val_f1
+  descending_tie_break: val_accuracy
+  final_tie_break: lexicographic_run_id
+  winner_overall: top_val_f1_among_all_14
+  winner_traditional: top_val_f1_among_ML_01_to_04
+  winner_deep_learning: top_val_f1_among_DL_01_to_10
+  threshold_policy: preserve_trained_model_decision_rule
+final_test_protocol:
+  evaluate_now: false
+  preliminary_finalists: [winner_traditional, winner_deep_learning]
+  final_evaluation_scope: exactly_two_locked_family_winners
+  only_one_evaluation_per_locked_model: true
+  do_not_tune_after_test: true
+  hold_gate_e_until_test_completed: true
+reporting:
+  compare_all_14_on_validation: true
+  demonstrate_rq1_rq2_rq3_rq4_rq5: true
+  optional_glove_runs: not_in_scope
+  cost_timing_note: SVC includes_two_candidate_fits_KNN_fit_excludes_search_DL_includes_validation
+  avoid_statistical_significance_claim: true
+  preserve_v1_1_gate_a_b_c: true

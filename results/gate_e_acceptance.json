@@ -1,0 +1,77 @@
+{
+  "stage": "Gate E / final official Test",
+  "status": "PASS",
+  "timestamp_utc": "2026-11-04T12:39:48.513106+00:00",
+  "dataset": "dedup_v1.1",
+  "test_rows": 25000,
+  "official_test_model_count": 2,
+  "test_retuning": false,
+  "models_evaluated": [
+    "ML-04-s42",
+    "DL-05-s42"
+  ],
+  "gate_a_status": "PASS",
+  "gate_b_status": "PASS",
+  "gate_c_status": "PASS",
+  "phase4_pretest_status": "PASS_PRETEST_LOCKED",
+  "phase4_pretest_lock_sha256": "6313bacff701e5aedae6239cf25d5b57cacaeeda761a3ff1102a3f3e59bf59c1",
+  "test_metrics_sha256": "7999c513dee644593cb17e6228b7e3417b1c074e4fe2ad27d9efa8f260fd9719",
+  "validation_registry_sha256": "1d249e8a3f2054f5be3357b6e3ae962ebdec7335486e77e94a9138dbfc01934e",
+  "original_pretest_notebook_sha256": "c9a66bb8eb2cea0ffb22da3594985c399b4083a21ca1f0b8a4436cffb2bf553b",
+  "executed_final_notebook07_sha256": "09d299fbe8c80fb5c8103208ef59879089676f1ec042b13db342f7215ee7a924",
+  "notebook07_code_cells_executed": 13,
+  "test_metrics": {
+    "ML-04-s42": {
+      "accuracy": 0.88096,
+      "precision": 0.8849636216653193,
+      "recall": 0.87576,
+      "f1": 0.8803377563329312,
+      "confusion_matrix": [
+        [
+          11077,
+          1423
+        ],
+        [
+          1553,
+          10947
+        ]
+      ]
+    },
+    "DL-05-s42": {
+      "accuracy": 0.8344,
+      "precision": 0.8464279794463783,
+      "recall": 0.81704,
+      "f1": 0.8314743955059839,
+      "confusion_matrix": [
+        [
+          10647,
+          1853
+        ],
+        [
+          2287,
+          10213
+        ]
+      ]
+    }
+  },
+  "gate_e_unittest": {
+    "passed": 12,
+    "failed": 0,
+    "log_sha256": "a0cf272801e823eb6f20639005d4e0de2921f24a542d0aa57a2979d8ac8ea091"
+  },
+  "report": "results/GATE_E_REPORT.md",
+  "test_report": "results/final_test/locked_final_test_metrics.json",
+  "caution": "Tests are a one-time, pre-selected scope of two family-best models, not all 14 models.",
+  "cross_gate_regression": {
+    "gate_a_tests": 11,
+    "gate_b_tests": 10,
+    "gate_c_tests": 12,
+    "gate_e_tests": 12,
+    "total_passed": 45,
+    "total_failed": 0,
+    "exit_code": 0,
+    "log_path": "results/final_regression_A_B_C_E.log",
+    "log_sha256": "bb737500999e7110be89d84f9ad796472f4f92f8fbb44da6a3bf20153a2d96eb",
+    "note": "Historical Gate B membership test updated to allow newer phases to append runs; no model/result changes."
+  }
+}

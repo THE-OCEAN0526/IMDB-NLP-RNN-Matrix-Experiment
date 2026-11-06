@@ -1,0 +1,26 @@
+# External copyrighted raw/cleaned review text
+/data/raw/
+/data/processed/*.parquet
+# Release-hosted large artifacts (not in Git commit history)
+/artifacts/models/
+/artifacts/vectorizers/*.npz
+/optional_glove/source/
+/optional_glove/artifacts/
+*.part
+*.tmp
+*.py[cod]
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db

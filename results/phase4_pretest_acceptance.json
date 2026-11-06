@@ -1,0 +1,37 @@
+{
+  "stage": "Phase 4 / Pre-Test Validation comparison and model selection",
+  "status": "PASS_PRETEST_LOCKED",
+  "gate_e_final_status": "PENDING_OFFICIAL_TEST",
+  "timestamp_utc": "2026-11-04T12:17:11.459385+00:00",
+  "dataset": "dedup_v1.1",
+  "training_rows": 19823,
+  "validation_rows": 4956,
+  "official_test_evaluations": 0,
+  "run_count": 14,
+  "notebook_count_mandatory": 7,
+  "notebook_07": {
+    "path": "notebooks/07_IMDB_Results_Comparison.ipynb",
+    "code_cells": 10,
+    "executed": 10,
+    "saved_errors": 0,
+    "sha256": "c9a66bb8eb2cea0ffb22da3594985c399b4083a21ca1f0b8a4436cffb2bf553b"
+  },
+  "tests": {
+    "passed": 12,
+    "failed": 0,
+    "log_sha256": "89c1eeb895a5e4809e1defcb932f6bebc5eb884d97f8bc60ea7a7978f891ed36"
+  },
+  "models_locked": 14,
+  "selected_finalists": [
+    "ML-04-s42",
+    "DL-05-s42"
+  ],
+  "selection_lock_path": "results/model_selection_lock.json",
+  "selection_lock_sha256": "6313bacff701e5aedae6239cf25d5b57cacaeeda761a3ff1102a3f3e59bf59c1",
+  "validation_ranked_csv_sha256": "32c03e53645b4710051cf1ce6be20433bd3629d069174e4c59adaf8c1b5330f3",
+  "research_questions_sha256": "c360e4e6cebe7ec14563e5fb0752f40f13c0a50b7f1db927abd5c035cb2733ce",
+  "gate_c_acceptance_sha256": "cb7ecb7cd6a16ddd14aa222cbb0ce727ff8660fb980e40e6742d8924ce754823",
+  "report_path": "results/PHASE4_PRETEST_REPORT.md",
+  "future_final_test_protocol": "results/FINAL_TEST_PROTOCOL.md",
+  "optional_glove_status": "NOT_RUN_AS_OPTIONAL"
+}

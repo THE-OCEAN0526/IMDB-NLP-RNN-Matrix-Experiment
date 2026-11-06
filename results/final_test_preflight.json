@@ -1,0 +1,29 @@
+{
+  "stage": "LOCKED_FINAL_TEST_PREFLIGHT",
+  "status": "PASS",
+  "model_selection_lock_sha256": "6313bacff701e5aedae6239cf25d5b57cacaeeda761a3ff1102a3f3e59bf59c1",
+  "validation_run_registry_sha256": "1d249e8a3f2054f5be3357b6e3ae962ebdec7335486e77e94a9138dbfc01934e",
+  "source_test_sha256": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da",
+  "derived_test_sha256": "66ff71f324dc3e43f534e59a54ba2d0587ac6e44526cc21c41d58a291d839e34",
+  "split_hash": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "tensorflow_token_ids_sha256": "62e8e9059340819fa3a213ed45e2f219e134a5aec049a4b91878eda98799a185",
+  "tfidf_test_matrix_sha256": "1c20d637998076e06e6154b8005917731496e2eeb9e0ae59334963c091716be4",
+  "selected_models": [
+    {
+      "run_id": "ML-04-s42",
+      "path": "artifacts/models/ML-04-s42.joblib",
+      "sha256": "bab9ec9083d5160fa2c58bc8b96e134764bcc6682854d3ecb53a956fa9ff353d"
+    },
+    {
+      "run_id": "DL-05-s42",
+      "path": "artifacts/models/DL-05-s42.keras",
+      "sha256": "a7b02a17c31b690e13d2bc59c62824bf61fc6a8b5df7db0587904a3d87aaf1e3"
+    }
+  ],
+  "test_evaluations_performed": 0,
+  "approved_scope": [
+    "ML-04-s42",
+    "DL-05-s42"
+  ],
+  "phase0_phase1_phase2_artifacts_preserved": true
+}

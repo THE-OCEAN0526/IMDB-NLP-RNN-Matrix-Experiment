@@ -1,0 +1,95 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793857957.217699       1 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4599 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:02:00.0, compute capability: 7.5
+GLOVE_START TL-01-s42 trainable False Train 19823 Val 4956 params 31937 smoke False
+Model: "IMDB_GRU_GloVe_100d"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru (GRU)           │ (None, 64)        │     31,872 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru[0][0]         │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,231,937 (4.70 MB)
+ Trainable params: 31,937 (124.75 KB)
+ Non-trainable params: 1,200,000 (4.58 MB)
+
+Epoch 1/10
+155/155 - 3s - 22ms/step - accuracy: 0.6258 - loss: 0.6323 - val_accuracy: 0.7615 - val_loss: 0.5044
+Epoch 2/10
+155/155 - 2s - 14ms/step - accuracy: 0.7738 - loss: 0.4800 - val_accuracy: 0.7877 - val_loss: 0.4625
+Epoch 3/10
+155/155 - 2s - 12ms/step - accuracy: 0.8003 - loss: 0.4344 - val_accuracy: 0.8045 - val_loss: 0.4163
+Epoch 4/10
+155/155 - 2s - 14ms/step - accuracy: 0.8089 - loss: 0.4131 - val_accuracy: 0.8067 - val_loss: 0.4167
+Epoch 5/10
+155/155 - 2s - 15ms/step - accuracy: 0.8207 - loss: 0.3953 - val_accuracy: 0.8085 - val_loss: 0.4123
+Epoch 6/10
+155/155 - 2s - 15ms/step - accuracy: 0.8273 - loss: 0.3818 - val_accuracy: 0.8077 - val_loss: 0.4101
+Epoch 7/10
+155/155 - 2s - 14ms/step - accuracy: 0.8343 - loss: 0.3700 - val_accuracy: 0.8073 - val_loss: 0.4085
+Epoch 8/10
+155/155 - 2s - 14ms/step - accuracy: 0.8399 - loss: 0.3589 - val_accuracy: 0.8103 - val_loss: 0.4076
+Epoch 9/10
+155/155 - 2s - 15ms/step - accuracy: 0.8460 - loss: 0.3479 - val_accuracy: 0.8113 - val_loss: 0.4076
+Epoch 10/10
+155/155 - 2s - 15ms/step - accuracy: 0.8521 - loss: 0.3370 - val_accuracy: 0.8128 - val_loss: 0.4084
+GLOVE_VAL TL-01-s42 accuracy 0.812752 f1 0.799914 loss 0.408388 epochs 10 sec 23.0
+GLOVE_RUN_PERSISTED TL-01-s42 model_sha 0f4e91f376c4bbacc452057d779ce6b47974dc33a4074650a1f8fa1de0b8cd44
+GLOVE_START TL-02-s42 trainable True Train 19823 Val 4956 params 1231937 smoke False
+Model: "IMDB_GRU_GloVe_100d"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ token_ids           │ (None, 160)       │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ embedding           │ (None, 160, 100)  │  1,200,000 │ token_ids[0][0]   │
+│ (Embedding)         │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ not_equal           │ (None, 160)       │          0 │ token_ids[0][0]   │
+│ (NotEqual)          │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ gru (GRU)           │ (None, 64)        │     31,872 │ embedding[0][0],  │
+│                     │                   │            │ not_equal[0][0]   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ positive_probabili… │ (None, 1)         │         65 │ gru[0][0]         │
+│ (Dense)             │                   │            │                   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 1,231,937 (4.70 MB)
+ Trainable params: 1,231,937 (4.70 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 1/10
+155/155 - 3s - 17ms/step - accuracy: 0.6476 - loss: 0.6067 - val_accuracy: 0.8019 - val_loss: 0.4403
+Epoch 2/10
+155/155 - 2s - 14ms/step - accuracy: 0.8447 - loss: 0.3579 - val_accuracy: 0.8469 - val_loss: 0.3600
+Epoch 3/10
+155/155 - 2s - 15ms/step - accuracy: 0.8958 - loss: 0.2612 - val_accuracy: 0.8315 - val_loss: 0.4191
+Epoch 4/10
+155/155 - 2s - 15ms/step - accuracy: 0.9244 - loss: 0.1981 - val_accuracy: 0.8551 - val_loss: 0.4095
+Epoch 5/10
+155/155 - 2s - 15ms/step - accuracy: 0.9511 - loss: 0.1381 - val_accuracy: 0.8402 - val_loss: 0.5240
+Epoch 6/10
+155/155 - 2s - 15ms/step - accuracy: 0.9659 - loss: 0.1000 - val_accuracy: 0.8460 - val_loss: 0.5949
+Epoch 7/10
+155/155 - 2s - 14ms/step - accuracy: 0.9777 - loss: 0.0686 - val_accuracy: 0.8412 - val_loss: 0.6431
+Epoch 8/10
+155/155 - 2s - 15ms/step - accuracy: 0.9857 - loss: 0.0484 - val_accuracy: 0.8440 - val_loss: 0.6671
+Epoch 9/10
+155/155 - 2s - 14ms/step - accuracy: 0.9914 - loss: 0.0300 - val_accuracy: 0.8420 - val_loss: 0.7128
+Epoch 10/10
+155/155 - 2s - 14ms/step - accuracy: 0.9953 - loss: 0.0187 - val_accuracy: 0.8198 - val_loss: 0.9013
+GLOVE_VAL TL-02-s42 accuracy 0.819814 f1 0.803434 loss 0.9013 epochs 10 sec 23.17
+GLOVE_RUN_PERSISTED TL-02-s42 model_sha fc90780f030ace8d361287b0180eaff7c317acfc6570872ec6824fddaf4eb30f
+GLOVE_OPTIONAL_TRAINING_COMPLETE ['TL-01-s42', 'TL-02-s42']

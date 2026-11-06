@@ -1,0 +1,26 @@
+{
+  "stage": "pre_test",
+  "test_evaluations": 0,
+  "dataset": "dedup_v1.1",
+  "eligible_models": 14,
+  "policy_sha256": "9aec90b8fbf884d685861d636877dbfe832e57b464b74274c0c370b439f35c62",
+  "runs_sha256": "1d249e8a3f2054f5be3357b6e3ae962ebdec7335486e77e94a9138dbfc01934e",
+  "ranking_sha256": "32c03e53645b4710051cf1ce6be20433bd3629d069174e4c59adaf8c1b5330f3",
+  "rq_sha256": "c360e4e6cebe7ec14563e5fb0752f40f13c0a50b7f1db927abd5c035cb2733ce",
+  "choices": {
+    "overall": "ML-04-s42",
+    "best_ml": "ML-04-s42",
+    "best_dl": "DL-05-s42",
+    "locked_finalists": [
+      "ML-04-s42",
+      "DL-05-s42"
+    ]
+  },
+  "figures": [
+    "results/figures/07_all_14_validation_f1.png",
+    "results/figures/07_traditional_2x2_f1.png",
+    "results/figures/07_regularization_2x2_f1.png",
+    "results/figures/07_advanced_rnn_f1.png",
+    "results/figures/07_deep_learning_cost_f1.png"
+  ]
+}

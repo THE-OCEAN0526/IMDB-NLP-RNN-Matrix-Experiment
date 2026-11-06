@@ -1,0 +1,56 @@
+{
+  "run_id": "TL-02-s42",
+  "condition": "GloVe_100d_FineTuning",
+  "dataset": "dedup_v1.1",
+  "seed": 42,
+  "scope": "Validation-only exploratory extension after official Gate E",
+  "original_baseline": "DL-03-s42",
+  "embedding_initialization": "GloVe_6B_100d_Train_only_vocab",
+  "embedding_trainable": true,
+  "trainable_params": 1231937,
+  "frozen_params": 0,
+  "vocabulary_size": 12000,
+  "input_length": 160,
+  "embedding_dim": 100,
+  "hidden_units": 64,
+  "epochs_completed": 10,
+  "batch_size": 128,
+  "optimizer": "Adam_0.001",
+  "loss": "binary_crossentropy",
+  "dropout": 0,
+  "early_stopping": false,
+  "train_time_sec": 23.17483,
+  "inference_time_sec": 0.21789,
+  "validation_size": 4956,
+  "test_evaluations": 0,
+  "glove_source_sha256": "4e29827d144c2097654433b1c4be41ce320949f0792ab820991a68fa3e34d494",
+  "glove_initial_weights_sha256": "0ddb2fdf9c12ca310494649da8225bbfe74b650104fa31bd90859e44a8862aee",
+  "glove_vocabulary_coverage": 0.7198699783297217,
+  "embedding_change_l2": 80.98626708984375,
+  "model_path": "optional_glove/artifacts/TL-02-s42.keras",
+  "model_sha256": "fc90780f030ace8d361287b0180eaff7c317acfc6570872ec6824fddaf4eb30f",
+  "predictions_path": "optional_glove/results/TL-02-s42_validation_predictions.csv",
+  "predictions_sha256": "4d6e2b40f4fc438f18a72ab9f3af10e72f10059ef38603388ec8d4e1eddd9e18",
+  "history_path": "optional_glove/results/TL-02-s42_history.csv",
+  "history_sha256": "5192349f7a26fffb616d7a9bf8327343af02d5ddea2d168b6a642458dddc4150",
+  "config_sha256": "523812f69b5b51e88e8e2b693c1eae989fa050a129d819c1ecd5ded8ab9bff74",
+  "created_at_utc": "2026-11-05T05:53:24.775244+00:00",
+  "hardware": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ],
+  "val_accuracy": 0.8198143664245359,
+  "val_precision": 0.888510223953262,
+  "val_recall": 0.7332261952591402,
+  "val_f1": 0.8034338542813119,
+  "val_confusion_matrix": [
+    [
+      2238,
+      229
+    ],
+    [
+      664,
+      1825
+    ]
+  ],
+  "val_loss": 0.9013001918792725
+}

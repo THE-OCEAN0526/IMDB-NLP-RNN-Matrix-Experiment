@@ -1,0 +1,219 @@
+{
+  "phase": 2,
+  "gate": "C",
+  "status": "PASS",
+  "validated_at_utc": "2026-11-04T12:01:34.524874+00:00",
+  "dataset": "dedup_v1.1",
+  "train_rows": 19823,
+  "validation_rows": 4956,
+  "test_rows_evaluated": 0,
+  "phase0_config_sha256": "6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664",
+  "phase1_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29",
+  "phase2_config_sha256": "a13de8d435a85d888ae9565ed462c35630c88b61f0a6a7692e187e967ae436b4",
+  "split_assignment_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "baseline_count": 7,
+  "new_count": 7,
+  "total_conditions": 14,
+  "run_ids": [
+    "ML-01-s42",
+    "ML-02-s42",
+    "ML-03-s42",
+    "ML-04-s42",
+    "DL-01-s42",
+    "DL-02-s42",
+    "DL-03-s42",
+    "DL-04-s42",
+    "DL-05-s42",
+    "DL-06-s42",
+    "DL-07-s42",
+    "DL-08-s42",
+    "DL-09-s42",
+    "DL-10-s42"
+  ],
+  "gate_c_tests": {
+    "passed": 12,
+    "failed": 0,
+    "log_sha256": "22c02018f982902f1163e2eba96d952e8f6ebfd33b7bf923ef7a96e6a9e37dc9"
+  },
+  "notebooks": {
+    "04_IMDB_LSTM_Regularization_Matrix.ipynb": {
+      "executed_cells": 5,
+      "errors": 0,
+      "sha256": "e9372a11c3e39cda78771e7da73c71eefcd2089df31738cf89335fc8badc84a7"
+    },
+    "05_IMDB_Advanced_RNN_Architectures.ipynb": {
+      "executed_cells": 5,
+      "errors": 0,
+      "sha256": "ff1905795619f0bd975d947349c2767c40b6da29f8c76c681cbea6ae2ab472e1"
+    }
+  },
+  "figures": [
+    "results/figures/phase2_all_14_validation_f1.png",
+    "results/figures/phase2_dropout_earlystopping_f1.png",
+    "results/figures/phase2_advanced_rnn_f1.png"
+  ],
+  "runs": [
+    {
+      "run_id": "ML-01-s42",
+      "val_accuracy": 0.6434624697336562,
+      "val_f1": 0.6553540081919251,
+      "val_loss": null,
+      "epochs_completed": null,
+      "params": null,
+      "train_sec": 0.0058,
+      "model": "artifacts/models/ML-01-s42.joblib",
+      "predictions": "results/predictions/ML-01-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-02-s42",
+      "val_accuracy": 0.8767150928167877,
+      "val_f1": 0.8772845953002611,
+      "val_loss": null,
+      "epochs_completed": null,
+      "params": null,
+      "train_sec": 194.5276,
+      "model": "artifacts/models/ML-02-s42.joblib",
+      "predictions": "results/predictions/ML-02-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-03-s42",
+      "val_accuracy": 0.7685633575464084,
+      "val_f1": 0.7778423397249661,
+      "val_loss": null,
+      "epochs_completed": null,
+      "params": null,
+      "train_sec": 0.003,
+      "model": "artifacts/models/ML-03-s42.joblib",
+      "predictions": "results/predictions/ML-03-s42_validation.csv"
+    },
+    {
+      "run_id": "ML-04-s42",
+      "val_accuracy": 0.8920500403551251,
+      "val_f1": 0.893234883256835,
+      "val_loss": null,
+      "epochs_completed": null,
+      "params": null,
+      "train_sec": 274.2794,
+      "model": "artifacts/models/ML-04-s42.joblib",
+      "predictions": "results/predictions/ML-04-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-01-s42",
+      "val_accuracy": 0.7050040355125101,
+      "val_f1": 0.7125442390876917,
+      "val_loss": 1.1701828241348269,
+      "epochs_completed": 10,
+      "params": 1210625,
+      "train_sec": 18.8431,
+      "model": "artifacts/models/DL-01-s42.keras",
+      "predictions": "results/predictions/DL-01-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-02-s42",
+      "val_accuracy": 0.8246569814366425,
+      "val_f1": 0.8184666805932734,
+      "val_loss": 0.7923689484596252,
+      "epochs_completed": 10,
+      "params": 1242305,
+      "train_sec": 13.6681,
+      "model": "artifacts/models/DL-02-s42.keras",
+      "predictions": "results/predictions/DL-02-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-03-s42",
+      "val_accuracy": 0.8099273607748184,
+      "val_f1": 0.8102336825141015,
+      "val_loss": 0.7745206356048584,
+      "epochs_completed": 10,
+      "params": 1231937,
+      "train_sec": 12.246,
+      "model": "artifacts/models/DL-03-s42.keras",
+      "predictions": "results/predictions/DL-03-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-04-s42",
+      "val_accuracy": 0.7962066182405165,
+      "val_f1": 0.7992845786963434,
+      "val_loss": 0.7950613498687744,
+      "epochs_completed": 10,
+      "params": 1242305,
+      "train_sec": 24.6234,
+      "model": "artifacts/models/DL-04-s42.keras",
+      "predictions": "results/predictions/DL-04-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-05-s42",
+      "val_accuracy": 0.8454398708635997,
+      "val_f1": 0.8451899757477769,
+      "val_loss": 0.3724057972431183,
+      "epochs_completed": 4,
+      "params": 1242305,
+      "train_sec": 9.943,
+      "model": "artifacts/models/DL-05-s42.keras",
+      "predictions": "results/predictions/DL-05-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-06-s42",
+      "val_accuracy": 0.8365617433414043,
+      "val_f1": 0.8379351740696278,
+      "val_loss": 0.4064854383468628,
+      "epochs_completed": 5,
+      "params": 1242305,
+      "train_sec": 12.3065,
+      "model": "artifacts/models/DL-06-s42.keras",
+      "predictions": "results/predictions/DL-06-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-07-s42",
+      "val_accuracy": 0.7782485875706214,
+      "val_f1": 0.7556148543473427,
+      "val_loss": 0.8176321387290955,
+      "epochs_completed": 10,
+      "params": 1275329,
+      "train_sec": 32.699,
+      "model": "artifacts/models/DL-07-s42.keras",
+      "predictions": "results/predictions/DL-07-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-08-s42",
+      "val_accuracy": 0.8066989507667474,
+      "val_f1": 0.8117138364779874,
+      "val_loss": 0.9440630078315736,
+      "epochs_completed": 10,
+      "params": 1267265,
+      "train_sec": 33.59,
+      "model": "artifacts/models/DL-08-s42.keras",
+      "predictions": "results/predictions/DL-08-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-09-s42",
+      "val_accuracy": 0.8004439063761097,
+      "val_f1": 0.7957877348750775,
+      "val_loss": 0.5445699691772461,
+      "epochs_completed": 10,
+      "params": 1284609,
+      "train_sec": 34.4293,
+      "model": "artifacts/models/DL-09-s42.keras",
+      "predictions": "results/predictions/DL-09-s42_validation.csv"
+    },
+    {
+      "run_id": "DL-10-s42",
+      "val_accuracy": 0.8216303470540759,
+      "val_f1": 0.8177319587628866,
+      "val_loss": 0.915796399116516,
+      "epochs_completed": 10,
+      "params": 1263873,
+      "train_sec": 32.6914,
+      "model": "artifacts/models/DL-10-s42.keras",
+      "predictions": "results/predictions/DL-10-s42_validation.csv"
+    }
+  ],
+  "limitation": [
+    "All scores are on Validation only. Test reserved for final Gate E.",
+    "Training runs use one seed=42; no statistical significance conclusion.",
+    "EarlyStopping records restored-weight validation loss, which can differ from history last epoch.",
+    "Model architecture comparisons are not parameter-count matched.",
+    "No semantic near-duplicate audit; official Test internal duplicates retained.",
+    "Sequence length 160 truncates more than half the reviews."
+  ]
+}

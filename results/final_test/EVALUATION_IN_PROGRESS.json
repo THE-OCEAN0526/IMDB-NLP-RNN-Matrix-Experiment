@@ -1,0 +1,11 @@
+{
+  "stage": "OFFICIAL_TEST_IN_PROGRESS",
+  "started_at_utc": "2026-11-04T12:32:54.945143+00:00",
+  "locked_selection_sha256": "6313bacff701e5aedae6239cf25d5b57cacaeeda761a3ff1102a3f3e59bf59c1",
+  "original_test_source_sha256": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da",
+  "scope": [
+    "ML-04-s42",
+    "DL-05-s42"
+  ],
+  "policy": "A partial failure must be reviewed; do not rerun or change model after seeing Test."
+}

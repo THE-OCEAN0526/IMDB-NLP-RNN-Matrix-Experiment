@@ -1,0 +1,17 @@
+test_a_one_time_lock_and_fixed_scope (test_gate_e.GateE.test_a_one_time_lock_and_fixed_scope) ... ok
+test_b_preserve_original_official_test_25k (test_gate_e.GateE.test_b_preserve_original_official_test_25k) ... ok
+test_c_model_hashes_and_original_registry_unchanged (test_gate_e.GateE.test_c_model_hashes_and_original_registry_unchanged) ... ok
+test_d_validation_registries_still_have_no_test_metrics (test_gate_e.GateE.test_d_validation_registries_still_have_no_test_metrics) ... ok
+test_e_both_25k_prediction_files_align_one_to_one (test_gate_e.GateE.test_e_both_25k_prediction_files_align_one_to_one) ... ok
+test_f_recalculate_test_metrics_and_confusion (test_gate_e.GateE.test_f_recalculate_test_metrics_and_confusion) ... ok
+test_g_svc_fixed_decision_rule (test_gate_e.GateE.test_g_svc_fixed_decision_rule) ... ok
+test_h_lstm_fixed_threshold_and_bce (test_gate_e.GateE.test_h_lstm_fixed_threshold_and_bce) ... ok
+test_i_locked_output_manifest_hashes (test_gate_e.GateE.test_i_locked_output_manifest_hashes) ... ok
+test_j_both_test_confusion_png_and_comparison (test_gate_e.GateE.test_j_both_test_confusion_png_and_comparison) ... ok
+test_k_pretest_snapshot_preserved_and_final_notebook_executed (test_gate_e.GateE.test_k_pretest_snapshot_preserved_and_final_notebook_executed) ... ok
+test_l_final_summary_and_gate_e_docs_present (test_gate_e.GateE.test_l_final_summary_and_gate_e_docs_present) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.358s
+
+OK

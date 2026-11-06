@@ -1,0 +1,29 @@
+{
+  "source": "Validation F1; signed differences in percentage points; seed=42",
+  "RQ1": {
+    "TFIDF_vs_BoW_given_KNN": 12.2488,
+    "TFIDF_vs_BoW_given_SVC": 1.595
+  },
+  "RQ2": {
+    "SVC_vs_KNN_given_BoW": 22.1931,
+    "SVC_vs_KNN_given_TFIDF": 11.5393
+  },
+  "RQ3": {
+    "LSTM_vs_SimpleRNN": 10.5922,
+    "GRU_vs_SimpleRNN": 9.7689,
+    "LSTM_vs_GRU": 0.8233
+  },
+  "RQ4": {
+    "Dropout_only_vs_baseline": -1.9182,
+    "ES_only_vs_baseline": 2.6723,
+    "Both_vs_baseline": 1.9468,
+    "interaction_difference_in_differences": 1.1927
+  },
+  "RQ5": {
+    "StackedLSTM_vs_LSTM": -6.2852,
+    "LSTM_GRU_vs_LSTM": -0.6753,
+    "BiLSTM_vs_LSTM": -2.2679,
+    "BiGRU_vs_GRU": 0.7498
+  },
+  "caution": "One seed and one Validation split; numerical differences are not statistically significant by themselves."
+}

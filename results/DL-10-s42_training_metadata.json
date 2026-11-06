@@ -1,0 +1,24 @@
+{
+  "run_id": "DL-10-s42",
+  "dataset_version": "dedup_v1.1",
+  "split_hash": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "phase1_config_sha256": "5b3e976e16d73ab101abd41f9d022a13d319d221760625f3c6586d1db8d64d29",
+  "phase2_config_sha256": "a13de8d435a85d888ae9565ed462c35630c88b61f0a6a7692e187e967ae436b4",
+  "seed": 42,
+  "test_evaluations": 0,
+  "group": "D_advanced_architecture",
+  "condition": {
+    "dropout": false,
+    "early_stopping": false
+  },
+  "architecture": "DL-10",
+  "epoch_budget": 10,
+  "epochs_completed": 10,
+  "best_val_loss_epoch": 1,
+  "history_last_val_loss": 0.9157963395118713,
+  "final_model_val_loss": 0.9157963991165161,
+  "weights_restored": false,
+  "early_stopping_callbacks": 0,
+  "tensorflow_version": "2.20.0",
+  "notes": "Final model metrics from final/restore_best_weights checkpoint; no official Test usage"
+}

@@ -1,0 +1,55 @@
+# Approved deduplicated independent IMDB experiment variant (2026-11-04)
+version: dedup_v1.1
+parent_spec: docs/IMDB_資料去重與切分規格_v1.1_審查草案.md
+dataset:
+  source_train: /workspace/20261103_NLP_assets/data/train.parquet
+  source_test: /workspace/20261103_NLP_assets/data/test.parquet
+  sha256_train: db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c
+  sha256_test: b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da
+  train_source_rows: 25000
+  test_source_rows: 25000
+  seed: 42
+  val_fraction: 0.20
+  preserve_official_test: true
+dedup:
+  text_type: full_cleaned_text
+  hash: sha256_utf8
+  prevent_cross_test_overlap: true
+  keep_unique_training_text: first_by_source_index
+  retain_test_internal_duplicates: true
+  abort_on_label_conflict: true
+preprocessing:
+  version: phase0-text-v1
+  html_unescape: true
+  html_break_to_space: true
+  strip_other_html_tags: true
+  lowercase: true
+  whitespace: collapse
+  punctuation: preserve
+  stopwords: preserve
+traditional:
+  max_features: 12000
+  ngram_range: [1, 1]
+  min_df: 1
+  lowercase: false
+  token_pattern: '(?u)\b\w+\b'
+  tfidf_norm: l2
+  use_idf: true
+text_vectorization:
+  max_tokens: 12000
+  standardize: null
+  split: whitespace
+  output_mode: int
+  output_sequence_length: 160
+  adapt_batch_size: 256
+  embedding_dim_for_future: 100
+expected_v1_1:
+  exclude_test_overlap: 123
+  exclude_internal_duplicates: 98
+  train: 19823
+  validation: 4956
+  test: 25000
+  train_ids_sha256: 0ac4e54e9f9dea0292d10a8349cfb554e58456271ccddffa476d0510b494d0b2
+  validation_ids_sha256: bf88a23488e4ccc54ef37262e66834981b9dd34c9ab7284bd7149f42995bfc9c
+  excluded_test_overlap_ids_sha256: da8b2fe76ab823c445ae64faa85d19cc8baf480e6ca91e78cdfbb5cf19fcdf83
+  excluded_internal_ids_sha256: 38deb73521db2d23a825c59debb23cb66802341dda3b88e0d438a4b460881af3

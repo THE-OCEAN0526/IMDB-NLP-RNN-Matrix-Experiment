@@ -1,0 +1,95 @@
+{
+  "dataset": "Stanford IMDB (stanfordnlp/imdb)",
+  "version": "dedup_v1.1",
+  "preprocessing_version": "phase0-text-v1",
+  "config_sha256": "6483ed250a1ddda6e54da5f6120e41180c8b0215bc90cf4ac68f71c874b64664",
+  "source_raw_sha256": {
+    "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c",
+    "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da"
+  },
+  "local_raw_sha256": {
+    "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c",
+    "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da"
+  },
+  "seed": 42,
+  "test_size": 0.2,
+  "stratify": "label",
+  "dedup": {
+    "text_type": "full_cleaned_text",
+    "hash": "sha256_utf8",
+    "prevent_cross_test_overlap": true,
+    "keep_unique_training_text": "first_by_source_index",
+    "retain_test_internal_duplicates": true,
+    "abort_on_label_conflict": true
+  },
+  "counts": {
+    "train": {
+      "rows": 19823,
+      "labels": {
+        "0": 9869,
+        "1": 9954
+      },
+      "sha256": "119f5201290bc5d555354738ec7bd2410d3f876508058ee393966227c9bb62ad",
+      "source_ids_sha256": "0ac4e54e9f9dea0292d10a8349cfb554e58456271ccddffa476d0510b494d0b2",
+      "unique_cleaned_text": 19823
+    },
+    "validation": {
+      "rows": 4956,
+      "labels": {
+        "0": 2467,
+        "1": 2489
+      },
+      "sha256": "d04f164fd94352fc5156548e23e5a8d885053f599252d9b273eca1ff38cf7fc8",
+      "source_ids_sha256": "bf88a23488e4ccc54ef37262e66834981b9dd34c9ab7284bd7149f42995bfc9c",
+      "unique_cleaned_text": 4956
+    },
+    "test": {
+      "rows": 25000,
+      "labels": {
+        "0": 12500,
+        "1": 12500
+      },
+      "sha256": "66ff71f324dc3e43f534e59a54ba2d0587ac6e44526cc21c41d58a291d839e34",
+      "source_ids_sha256": "933e8bd59bc47a8a9508418f628023403bd6c9c23823a25667e7b39322b2bb3c",
+      "unique_cleaned_text": 24799
+    }
+  },
+  "excluded_lists_sha256": {
+    "excluded_test_overlap.csv": "e25ec41cdd43ab0b281c8e08bc40d59dc6edb05539f774aa6d067e899088dbf4",
+    "excluded_intra_train_duplicates.csv": "551ec838cdc58c9d27fa3542e64258a49559dc511dc2a88e434322163a43c0a8"
+  },
+  "split_assignments_sha256": "9e25b0d714d1fb555c8c8a58fa6858c392ec60ecfba554b923553626154174e9",
+  "audit": {
+    "version": "dedup_v1.1",
+    "source_train_rows": 25000,
+    "official_test_rows": 25000,
+    "excluded_test_overlap": {
+      "rows": 123,
+      "labels": {
+        "0": 95,
+        "1": 28
+      }
+    },
+    "excluded_intra_train_duplicates": {
+      "rows": 98,
+      "labels": {
+        "0": 69,
+        "1": 29
+      }
+    },
+    "train_val_test_cross_split_cleaned_text_overlaps": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "test_internal_duplicate_groups": 193,
+    "test_internal_extra_duplicate_rows": 201,
+    "global_conflicting_label_hash_groups": 0,
+    "warning": "No cross-split identical full cleaned text; semantic near-duplicates not tested and official Test internal duplicates retained."
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.9.1"
+  }
+}

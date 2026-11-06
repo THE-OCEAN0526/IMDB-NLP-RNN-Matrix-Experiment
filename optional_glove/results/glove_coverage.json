@@ -1,0 +1,23 @@
+{
+  "source": "GloVe 6B 100d Zenodo word2vec binary converted from pretrained GloVe",
+  "source_rows": 400000,
+  "vector_dim": 100,
+  "train_fitted_vocab_size": 12000,
+  "eligible_vocab_excluding_PAD_UNK": 11998,
+  "exact_matching_vocab": 8637,
+  "unmatched_vocab": 3361,
+  "vocab_exact_match_fraction": 0.7198699783297217,
+  "train_nonpad_known_token_occurrences": 2479177,
+  "train_nonpad_unk_occurrences": 289141,
+  "train_glove_matched_token_occurrences": 2254733,
+  "train_coverage_excluding_UNK": 0.9094683437285841,
+  "train_coverage_including_UNK": 0.8144775997555194,
+  "pad_index": 0,
+  "unk_index": 1,
+  "pad_all_zero": true,
+  "unk_init": "Gaussian random 0.05, seed42",
+  "no_glove_match_init": "Gaussian random 0.05, seed42",
+  "fit_from_Train_only": true,
+  "validation_or_test_statistics_used": false,
+  "notes": "Exact-token alignment only; punctuation-attached vocabulary tokens can miss GloVe."
+}
