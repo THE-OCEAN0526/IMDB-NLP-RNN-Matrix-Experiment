@@ -1,6 +1,6 @@
 # IMDB NLP / RNN — 16 組矩陣比較實驗
 
-以相同 IMDB 電影評論資料，對比傳統機器學習、RNN 家族與 GloVe 預訓練詞向量的情緒分類結果。本專案是原本在 ai-server 完成的 **dedup_v1.1 正式實測成果**，包含訓練輸出、可執行原始碼、Notebook、比對圖、混淆矩陣與評估報告。
+以 IMDB 電影評論情緒分類為研究主題，比較傳統機器學習、RNN 家族與 GloVe 預訓練詞向量的實測表現。專案採用 **dedup_v1.1 實驗資料版本**，提供原始碼、Jupyter Notebook、訓練紀錄、評估結果與視覺化圖表。
 
 **English:** Reproducible research archive of 16 IMDB binary sentiment classification conditions (4 traditional ML, 10 recurrent deep learning, 2 post-test exploratory GloVe models). The original images and saved evaluation outputs are included; full serialized model and feature artifacts are available in a GitHub Release. Third-party IMDb review text is not redistributed.
 
@@ -70,11 +70,11 @@ ML-04 在這次官方測試中少了 1,164 筆誤判。這只能描述本次固�
 - `optional_glove/`：事後探索性 Gate D 的設定、程式與結果。
 - `tests/`、`tools/`：自動測試及實驗工具。
 - `data/processed/`：切分清單、SHA-256 與去重摘要（不含評論全文）。
-- `docs/ORIGINAL_EXPERIMENT_HISTORY.md`：原始逐階段研究紀錄。
+- `docs/EXPERIMENT_MILESTONES.md`：實驗階段、模型選擇與評估流程。
 
 ### 如何取得完整實驗產物？
 
-從 **[Releases](../../releases)** 下載經整理的 *full research artifact bundle*：包含所有已保存的訓練權重（Keras/Joblib）、特徵矩陣、Notebook、原始訓練曲線、報告、GloVe 向量來源及完整驗收紀錄。**唯一因再發布限制而排除的是 IMDB 評論原文／清理後全文資料**；原版完整封存 ZIP 則仍保存在原 ai-server，不會上傳到公開 GitHub。
+從 **[Releases](../../releases)** 下載完整研究附件，內含訓練權重（Keras/Joblib）、特徵矩陣、Notebook、Learning Curves、Confusion Matrices、GloVe 詞向量及實驗報告。影評全文資料請依照 [資料來源與使用說明](DATA_AND_LICENSE.md) 取得。
 
 重現步驟與原始環境說明：[REPRODUCIBILITY.md](REPRODUCIBILITY.md)。
 

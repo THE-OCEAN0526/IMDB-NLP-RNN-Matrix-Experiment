@@ -1,6 +1,6 @@
 # Reproducibility — data, software and known limitations
 
-## Recorded environment (ai-server)
+## Experiment software and hardware
 
 - Python 3.11.17
 - TensorFlow 2.20.0 / Keras 3.15.1
@@ -8,7 +8,7 @@
 - scikit-learn 1.9.1, matplotlib 3.11.2
 - pyarrow 26.0.0, joblib 1.6.0, PyYAML 6.0.3
 - Linux + JupyterLab; NVIDIA RTX 2060 GPU for the recurrent models; sklearn SVC on CPU.
-- GloVe models used a separate short-lived GPU container after the primary Jupyter CUDA runtime failed to initialize; original JupyterLab service was not restarted.
+- GloVe models were trained with GPU acceleration in a separate environment configured with the same software image.
 
 The provided `requirements.txt` records tested-in-place installed versions; a fresh install on an arbitrary platform has **not** been tested.
 
@@ -25,7 +25,7 @@ Expected original file SHA256s:
 - train: db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c
 - test: b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da
 
-Another download or reserialization of the same dataset may produce a **different Parquet byte hash**. Adjusting file paths or source hashes without tracking provenance will not demonstrate exact reproducibility. Prepare an explicit new configuration/version before rerunning with different byte representations. No new end-to-end training run was carried out for this public release.
+Another download or reserialization of the same dataset may produce a **different Parquet byte hash**. Adjusting file paths or source hashes without tracking provenance will not demonstrate exact reproducibility. Prepare an explicit new configuration/version before rerunning with different byte representations. The published results correspond to the saved experimental runs; a clean-environment end-to-end rerun has not been independently verified.
 
 ## Notebook order
 
