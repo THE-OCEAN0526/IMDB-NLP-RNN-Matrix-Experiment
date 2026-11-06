@@ -24,3 +24,7 @@ venv/
 *.pfx
 .DS_Store
 Thumbs.db
+
+# Transient run state
+results/.runs.csv.lock
+results/final_test/EVALUATION_IN_PROGRESS.json
